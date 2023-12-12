@@ -1,0 +1,109 @@
+.hero {
+  max-width: 375px;
+}
+.tags-img-wrapper {
+  display: none;
+}
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.page-title {
+  color: #242424;
+  font-size: 38px;
+  line-height: 1.16;
+  margin-bottom: 20px;
+}
+.page-subtitle {
+  font-size: 14px;
+  line-height: 1.29;
+}
+.title-subtitle-wrapper {
+  margin-bottom: 20px;
+}
+.title-img-wrapper {
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.hero-image {
+  width: 335px;
+}
+.tag-list {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.tag-list-item {
+  border-radius: 30px;
+  border: 1px solid #242424;
+  padding: 4px 12px;
+}
+.tag-text {
+  font-size: 14px;
+  line-height: 1.29;
+}
+@media screen and (min-width: 767px) {
+  .hero {
+    max-width: 768px;
+  }
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .page-title {
+    font-size: 74px;
+    line-height: 1;
+  }
+  .hero-icon {
+    width: 59px;
+    height: 59px;
+  }
+  .page-subtitle {
+    width: 528px;
+    font-size: 18px;
+    line-height: 1.33;
+  }
+  .title-subtitle-wrapper {
+    margin-bottom: 32px;
+  }
+  .title-img-wrapper {
+    border-radius: 60px;
+    margin-bottom: 16px;
+  }
+  .tag-list {
+    justify-content: flex-end;
+  }
+  .tag-list-item {
+    padding: 4px 16px;
+  }
+  .tag-text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+@media screen and (min-width: 1439px) {
+  .hero {
+    max-width: 1440px;
+  }
+  .hero-title-tags-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .tags-img-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .tag-list-desktop {
+    width: 197px;
+    flex-wrap: wrap;
+  }
+  .outdoor-fitness-img {
+    border-radius: 20px;
+    margin-bottom: 32px;
+  }
+
+  .tablet-mobile-list {
+    display: none;
+  }
+}
