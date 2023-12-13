@@ -1,3 +1,8 @@
+.filter__container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .filter__searchBox__btnContainer__wrapper {
   display: flex;
   flex-direction: column;
@@ -112,6 +117,10 @@ button {
 }
 
 @media screen and (min-width: 768px) {
+  .filter__container {
+    padding: 0;
+  }
+
   .filter__title__container {
     margin-bottom: 32px;
   }
