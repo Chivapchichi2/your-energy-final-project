@@ -13,8 +13,8 @@
   transition: 500ms;
   -webkit-transform: translateX(0);
   transform: translateX(0);
-  background-color: #242424;
-  color: #f4f4f4;
+  background-color: var(--main-color);
+  color: var(--page-background-color);
 }
 .nav-bar-mobile.is-hidden {
   opacity: 0;
@@ -44,7 +44,7 @@
 .bar4 {
   width: 100%;
   height: 2px;
-  background-color: #242424;
+  background-color: var(--main-color);
   border-radius: 1px;
   transition: 400ms;
 }
@@ -52,7 +52,7 @@
 .change .bar1 {
   -webkit-transform: rotate(-45deg) translate(-9px, 9px);
   transform: rotate(-45deg) translate(-5px, 5px);
-  background-color: #f4f4f4;
+  background-color: var(--page-background-color);
 }
 
 .change .bar2,
@@ -63,7 +63,7 @@
 .change .bar4 {
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
   transform: rotate(45deg) translate(-5px, -5px);
-  background-color: #f4f4f4;
+  background-color: var(--page-background-color);
 }
 .nav-mobile-list {
   display: flex;
@@ -87,7 +87,7 @@
   width: 44px;
   height: 44px;
   padding: 8px;
-  border: solid 1px rgba(244, 244, 244, 0.1);
+  border: solid 1px var(--border-style);
   transition:
     fill 300ms ease,
     background-color 300ms ease;
@@ -96,7 +96,7 @@
 }
 .message-link:hover .icon-message,
 .message-link:focus .icon-message {
-  background-color: #f4f4f4;
+  background-color: var(--page-background-color);
   fill: #242424;
 }
 @media screen and (min-width: 768px) {
