@@ -1,0 +1,191 @@
+body {
+  background-color: #f4f4f4;
+}
+* {
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+/* Стилі за замовчуванням, які застосовуються до всіх пристроїв */
+.quote-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.quote-container ul {
+  justify-content: center;
+}
+
+.quote-container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.quote-container li {
+  max-width: 335px;
+}
+
+.quote-card {
+  display: flex;
+  background-color: #242424;
+  border-radius: 20px;
+  gap: 18px;
+  padding: 20px;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 32px;
+  background: rgba(244, 244, 244, 0.2);
+  border-radius: 32px;
+}
+
+.icon-container svg {
+  fill: #fff;
+}
+.icon-container-weight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 32px;
+  background: rgba(36, 36, 36, 1);
+  border-radius: 32px;
+}
+
+.sport-weight-icon {
+  fill: rgba(244, 244, 244, 1);
+}
+
+.text-container h3 {
+  color: #f4f4f4;
+  font-family: 'DM Sans';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 100% */
+  margin: 0px 0px 8px 0px;
+}
+
+.quote-text {
+  color: rgba(244, 244, 244, 0.6);
+
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+  margin: 0px 0px 16px 0px;
+}
+
+.name-text {
+  color: #f4f4f4;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+  margin: 0;
+}
+
+.quote-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.recomendation {
+  gap: 18px;
+  background: #fff;
+  border-radius: 20px;
+  display: flex;
+  padding: 20px;
+}
+
+.text-recomendation h3 {
+  color: #242424;
+  font-family: DM Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 100% */
+  margin: 0px 0px 2px 0px;
+}
+
+.title-text-recomendation {
+  color: rgba(36, 36, 36, 0.6);
+
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+  margin: 0px 0px 16px 0px;
+}
+
+.recomendation-discription {
+  color: #242424;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+}
+
+/* Медіа-запити для планшетів */
+@media (min-width: 768px) {
+  body {
+    padding: 32px;
+  }
+  .quote-container {
+    padding: 0;
+  }
+  .quote-container ul {
+    display: grid;
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Два стовпці з рівними фракційними одиницями */
+    grid-template-rows: auto auto; /* Висота рядків буде визначена автоматично */
+    gap: 20px; /* Відступ між елементами сітки */
+  }
+
+  .quote-container li {
+    max-width: none;
+  }
+
+  .quote-container li.quote-card,
+  .quote-container li.recomendation {
+    width: 100%; /* Використовуємо всю доступну ширину стовпця */
+  }
+
+  .quote-container li:nth-child(3) {
+    grid-column: 1; /* Третя картка займатиме перший стовпець у другому рядку */
+    grid-row: 2; /* Розташування у другому рядку */
+  }
+
+  .quote-container li:nth-child(2) {
+    grid-row: 1 / span 2; /* Друга картка займатиме два рядки */
+    grid-column: 2; /* Розташування у другому стовпці */
+  }
+
+  /* Стилі для великих зображень */
+  .quote-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Забезпечує, що зображення заповнить свій контейнер */
+  }
+}
+
+/* Медіа-запити для комп'ютерів */
