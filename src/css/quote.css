@@ -34,7 +34,7 @@ ul {
 
 .quote-card {
   display: flex;
-  background-color: #242424;
+  background-color: var(--main-color);
   border-radius: 20px;
   gap: 18px;
   padding: 20px;
@@ -69,32 +69,21 @@ ul {
 
 .text-container h3 {
   color: #f4f4f4;
-  font-family: 'DM Sans';
   font-size: 20px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 20px; /* 100% */
-  margin: 0px 0px 8px 0px;
+  line-height: 1;
+  margin: 0 0 8px 0;
 }
 
 .quote-text {
   color: rgba(244, 244, 244, 0.6);
-
-  font-family: DM Sans;
   font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px; /* 128.571% */
-  margin: 0px 0px 16px 0px;
+  margin: 0 0 16px 0;
 }
 
 .name-text {
   color: #f4f4f4;
-  font-family: DM Sans;
   font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px; /* 128.571% */
   margin: 0;
 }
 
@@ -114,33 +103,22 @@ ul {
 }
 
 .text-recomendation h3 {
-  color: #242424;
-  font-family: DM Sans;
+  color: var(--main-color);
   font-size: 20px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 20px; /* 100% */
-  margin: 0px 0px 2px 0px;
+  line-height: 1;
+  margin: 0 0 2px 0;
 }
 
 .title-text-recomendation {
   color: rgba(36, 36, 36, 0.6);
-
-  font-family: DM Sans;
   font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px; /* 128.571% */
-  margin: 0px 0px 16px 0px;
+  margin: 0 0 16px 0;
 }
 
 .recomendation-discription {
-  color: #242424;
-  font-family: DM Sans;
+  color: var(--main-color);
   font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px; /* 128.571% */
 }
 
 /* Медіа-запити для планшетів */
