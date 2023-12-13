@@ -1,11 +1,16 @@
-import apiClient from './apiClient';
+import { APIClient } from './apiClient';
 
 class APIManager {
-  constructor(apiClient) {
-    this.apiClient = apiClient;
+  constructor() {
+    this.apiClient = new APIClient();
   }
 
   async getFiltersOfExercises(filter) {
+    // EXAMPLE
+    //apiManager.getFiltersOfExercises('Body part',)
+    //pull - input query
+    //bodypart - data-filterRequset of button
+
     try {
       const { data } = await this.apiClient.fetchFiltersOfExercises(filter);
       return data;
@@ -24,6 +29,11 @@ class APIManager {
   }
 
   async getExercisesByFilters(keyword, filterQuery, filter) {
+    // EXAMPLE
+    //apiManager.getExercisesByFilters('pull','bodypart','waist',)
+    //pull - input query
+    //bodypart - data-filterDetailedRequset of button
+    //value of btn.filter__query  in filter.html
     try {
       const { data } = await this.apiClient.fetchExercisesByFilters(
         keyword,
@@ -48,5 +58,5 @@ class APIManager {
   }
 }
 
-const apiManager = new APIManager(apiClient);
+const apiManager = new APIManager();
 export default apiManager;

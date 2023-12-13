@@ -1,22 +1,23 @@
 import axios from 'axios';
 
-class APIClient {
-  #BASE_URL = 'https://your-energy.b.goit.study/api/';
+export class APIClient {
   #URL_EXERCISES = 'exercises';
   #URL_FILTERS = 'filters';
   #URL_QOUTE = 'quote';
 
+  constructor() {
+    axios.defaults.baseURL = 'https://your-energy.b.goit.study/api/';
+  }
+
   async fetchFiltersOfExercises(filter = 'Muscles', page = 1, limit = 12) {
     const params = new URLSearchParams({ filter, page, limit });
 
-    const response = await axios.get(
-      `${this.#BASE_URL}${this.#URL_FILTERS}?${params}`
-    );
+    const response = await axios.get(`${this.#URL_FILTERS}?${params}`);
     return response;
   }
 
   async fetchQuote() {
-    const response = await axios.get(`${this.#BASE_URL}${this.#URL_QOUTE}`);
+    const response = await axios.get(`${this.#URL_QOUTE}`);
     return response;
   }
 
@@ -34,20 +35,12 @@ class APIClient {
       limit,
     });
 
-    const response = await axios.get(
-      `${this.#BASE_URL}${this.#URL_EXERCISES}?${params}`
-    );
+    const response = await axios.get(`${this.#URL_EXERCISES}?${params}`);
     return response;
   }
 
   async fetchExerciseByID(id) {
-    const response = await axios.get(
-      `${this.#BASE_URL}${this.#URL_EXERCISES}/${id}`
-    );
+    const response = await axios.get(`${this.#URL_EXERCISES}/${id}`);
     return response;
   }
 }
-
-const apiClient = new APIClient();
-
-export default apiClient;
