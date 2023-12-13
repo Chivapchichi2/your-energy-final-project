@@ -9,14 +9,13 @@
   padding-right: 20px;
 }
 .page-title {
-  color: #242424;
+  color: var(--main-color);
   font-size: 38px;
   line-height: 1.16;
   margin-bottom: 20px;
 }
 .page-subtitle {
   font-size: 14px;
-  line-height: 1.29;
 }
 .title-subtitle-wrapper {
   margin-bottom: 20px;
@@ -36,12 +35,11 @@
 }
 .tag-list-item {
   border-radius: 30px;
-  border: 1px solid #242424;
+  border: 1px solid var(--main-color);
   padding: 4px 12px;
 }
 .tag-text {
   font-size: 14px;
-  line-height: 1.29;
 }
 @media screen and (min-width: 767px) {
   .hero {

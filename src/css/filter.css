@@ -1,14 +1,3 @@
-:root {
-  --main-color: #242424;
-  --secondary-color: rgba(36, 36, 36, 0.5);
-}
-
-.filter__container {
-  font-family: DM Sans;
-  font-style: normal;
-  font-weight: 400;
-}
-
 .filter__searchBox__btnContainer__wrapper {
   display: flex;
   flex-direction: column;
