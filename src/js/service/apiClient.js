@@ -22,11 +22,17 @@ class APIClient {
 
   async fetchExercisesByFilters(
     keyword = '',
-    filter = '',
+    filterQuery = '',
+    filter = 'Muscles',
     page = 1,
     limit = 10
   ) {
-    const params = new URLSearchParams({ filter, keyword, page, limit });
+    const params = new URLSearchParams({
+      [filter]: filterQuery,
+      keyword,
+      page,
+      limit,
+    });
 
     const response = await axios.get(
       `${this.#BASE_URL}${this.#URL_EXERCISES}?${params}`

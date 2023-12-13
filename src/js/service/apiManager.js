@@ -23,11 +23,12 @@ class APIManager {
     }
   }
 
-  async getExercisesByFilters(keyword, filter) {
+  async getExercisesByFilters(keyword, filterQuery, filter) {
     try {
       const { data } = await this.apiClient.fetchExercisesByFilters(
-        filter,
-        keyword
+        keyword,
+        filterQuery,
+        filter
       );
       return data;
     } catch (error) {
