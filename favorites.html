@@ -9,12 +9,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
   
-  <script type="module" crossorigin src="/your-energy-final-project/assets/main-5c6f6bb1.js"></script>
-  <link rel="stylesheet" href="/your-energy-final-project/assets/main-b29c4b46.css">
+  <script type="module" crossorigin src="/your-energy-final-project/assets/main-4f9e91cf.js"></script>
+  <link rel="stylesheet" href="/your-energy-final-project/assets/main-c8614b30.css">
 </head>
 <body>
-<div class="quote-container">
-  <ul>
+<div class="quote-container container">
+  <ul class="quote-list">
     <li class="quote-card">
       <div>
         <div class="icon-container">
@@ -24,7 +24,14 @@
         </div>
       </div>
       <div class="text-container">
-        <h3>Quote of the day</h3>
+        <div class="quote-title-icon-cont">
+          <h3 class="quote-title">Quote of the day</h3>
+          <div class="quote-icon-cont">
+            <svg class="quote-icon" width="20" height="20">
+              <use href="../img/sprite.svg#icon-inverted-commas"></use>
+            </svg>
+          </div>
+        </div>
         <p class="quote-text">
           A lot of times I find that people who are blessed with the most talent
           don't ever develop that attitude, and the ones who aren't blessed in
@@ -33,37 +40,56 @@
         <p class="name-text">Tom Brady</p>
       </div>
     </li>
-    <li>
-      <img
-        srcset="
-          ../img/quote/women-mobile-x1.jpg  335w,
-          ../img/quote/women-mobile-x2.jpg  670w,
-          ../img/quote/women-tablet-x1.jpg  288w,
-          ../img/quote/women-tablet-x2.jpg  576w,
-          ../img/quote/women-desktop-x1.jpg 444w,
-          ../img/quote/women-desktop-x2.jpg 888w
-        "
-        sizes="(min-width: 1158px) 444x, (min-width: 768px) 288px, (max-width: 428px) 335px"
-        src="../img/quote/women-mobile-x1.jpg"
-        alt="girls"
-        height="242"
-        class="quote-img"
-      />
+    <li class="quote-section-img">
+      <picture>
+        <source
+          media="(min-width: 1440px)"
+          srcset="
+            ../img/quote/women-desktop-x1.jpg 1x,
+            ../img/quote/women-desktop-x2.jpg 2x
+          "
+        />
+        <source
+          media="(min-width: 768px) and (max-width: 1439px)"
+          srcset="
+            ../img/quote/women-tablet-x1.jpg 1x,
+            ../img/quote/women-tablet-x2.jpg 2x
+          "
+        />
+        <source
+          media="(max-width: 767px)"
+          srcset="
+            ../img/quote/women-mobile-x1.jpg 1x,
+            ../img/quote/women-mobile-x2.jpg 2x
+          "
+        />
+        <img
+          src="../img/quote/women-mobile-x1.jpg"
+          alt="girls"
+          class="quote-img"
+          width="335"
+        />
+      </picture>
     </li>
     <li class="recomendation">
       <div>
         <div class="icon-container-weight">
-          <svg class="sport-weight-icon" width="20" height="20"></svg>
-          <use href="../img/sprite.svg#icon-sport-weight"></use>
+          <svg class="sport-weight-icon" width="20" height="20">
+            <use href="../img/sprite.svg#icon-sport-weight"></use>
+          </svg>
         </div>
       </div>
       <div class="text-recomendation">
-        <h3>110 min</h3>
+        <h3 class="title">110 min</h3>
         <p class="title-text-recomendation">Daily norm of sports</p>
         <p class="recomendation-discription">
           The World Health Organization recommends at least 150 minutes of
           moderate-intensity aerobic physical activity throughout the week for
-          adults aged 18–64. However, what ha...
+          adults aged 18-64. However, what happens if we adjust that number to
+          110 minutes every day? While it might seem like a high number to hit,
+          dedicating 110 minutes daily to sporting activities may offer
+          unparalleled benefits to physical health, mental well-being, and
+          overall quality of life.
         </p>
       </div>
     </li>
