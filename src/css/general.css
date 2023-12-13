@@ -37,6 +37,29 @@ img {
 body {
   font-family: 'DM Sans', sans-serif;
   line-height: 1.29;
+  background-color: var(--page-background-color);
 }
 
+.section {
+  max-width: 375px;
+}
 
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media screen and (min-width: 767px) {
+  .section {
+    max-width: 768px;
+  }
+
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .section {
+    max-width: 1440px;
+  }
+}
