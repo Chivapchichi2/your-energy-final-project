@@ -1,0 +1,109 @@
+.nav-bar-mobile {
+  position: fixed;
+  z-index: 333;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: 500ms;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  background-color: var(--main-color);
+  color: var(--page-background-color);
+}
+.nav-bar-mobile.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+}
+.burger {
+  z-index: 555;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px 4px;
+  border: none;
+
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3,
+.bar4 {
+  width: 100%;
+  height: 2px;
+  background-color: var(--main-color);
+  border-radius: 1px;
+  transition: 400ms;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 9px);
+  transform: rotate(-45deg) translate(-5px, 5px);
+  background-color: var(--page-background-color);
+}
+
+.change .bar2,
+.change .bar3 {
+  opacity: 0;
+}
+
+.change .bar4 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-5px, -5px);
+  background-color: var(--page-background-color);
+}
+.nav-mobile-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+}
+.nav-bar-mobile a {
+  color: inherit;
+}
+.nav-bar-mobile svg {
+  fill: currentColor;
+}
+.menu-messagers {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.icon-message {
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  border: solid 1px var(--border-style);
+  transition:
+    fill 300ms ease,
+    background-color 300ms ease;
+
+  border-radius: 10px;
+}
+.message-link:hover .icon-message,
+.message-link:focus .icon-message {
+  background-color: var(--page-background-color);
+  fill: #242424;
+}
+@media screen and (min-width: 768px) {
+  .burger {
+    display: none;
+  }
+  .nav-bar-mobile {
+    display: none;
+  }
+}
