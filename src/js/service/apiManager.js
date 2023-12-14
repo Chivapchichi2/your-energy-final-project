@@ -1,4 +1,5 @@
 import { APIClient } from './apiClient';
+import { Messages } from './messages';
 
 class APIManager {
   constructor() {
@@ -13,9 +14,10 @@ class APIManager {
 
     try {
       const { data } = await this.apiClient.fetchFiltersOfExercises(filter);
+
       return data;
     } catch (error) {
-      console.log(error);
+      Messages.error(error.message);
     }
   }
 
@@ -24,7 +26,7 @@ class APIManager {
       const { data } = await this.apiClient.fetchQuote();
       return data;
     } catch (error) {
-      console.log(error);
+      Messages.error(error.message);
     }
   }
 
@@ -42,18 +44,17 @@ class APIManager {
       );
       return data;
     } catch (error) {
-      console.log(error);
+      Messages.error(error.message);
     }
   }
 
   async getExercisesByID(id) {
     const formatedID = id.toString();
-
     try {
       const { data } = await this.apiClient.fetchExerciseByID(formatedID);
       return data;
     } catch (error) {
-      console.log(error);
+      Messages.error(error.message);
     }
   }
 }

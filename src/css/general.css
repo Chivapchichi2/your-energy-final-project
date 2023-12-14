@@ -42,12 +42,15 @@ body {
 
 .section {
   max-width: 375px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .container {
   padding-left: 20px;
   padding-right: 20px;
 }
+
 @media screen and (min-width: 767px) {
   .section {
     max-width: 768px;
@@ -58,6 +61,7 @@ body {
     padding-right: 32px;
   }
 }
+
 @media screen and (min-width: 1440px) {
   .section {
     max-width: 1440px;
