@@ -64,6 +64,31 @@ class APIManager {
     }
   }
 
+  async subscribe(email) {
+    try {
+      const { message } = await this.apiClient.postSubscription(email);
+      return Messages.success(message);
+    } catch (error) {
+      Messages.error(error.message);
+    }
+  }
+
+  async sendRating(id, rate, email, review) {
+    try {
+      const response = await this.apiClient.patchExerciseRating(
+        id,
+        rate,
+        email,
+        review
+      );
+      return response;
+    } catch (error) {
+      Messages.error(error.message);
+    }
+  }
+
+  patchExerciseRating;
+
   incrementPage() {
     this.page += 1;
   }
