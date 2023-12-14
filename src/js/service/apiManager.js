@@ -1,9 +1,11 @@
+import { ActionNames } from '../misc/names';
 import { APIClient } from './apiClient';
 import { Messages } from './messages';
 
 class APIManager {
   constructor() {
     this.apiClient = new APIClient();
+    this.page = ActionNames.DEFAULT_PAGE_NUMBER;
   }
 
   async getFiltersOfExercises(filter) {
@@ -13,7 +15,10 @@ class APIManager {
     //bodypart - data-filterRequset of button
 
     try {
-      const { data } = await this.apiClient.fetchFiltersOfExercises(filter);
+      const { data } = await this.apiClient.fetchFiltersOfExercises(
+        filter,
+        this.page
+      );
 
       return data;
     } catch (error) {
@@ -32,7 +37,7 @@ class APIManager {
 
   async getExercisesByFilters(keyword, filterQuery, filter) {
     // EXAMPLE
-    //apiManager.getExercisesByFilters('pull','bodypart','waist',)
+    //apiManager.getExercisesByFilters('pull','waist','bodypart')
     //pull - input query
     //bodypart - data-filterDetailedRequset of button
     //value of btn.filter__query  in filter.html
@@ -40,7 +45,8 @@ class APIManager {
       const { data } = await this.apiClient.fetchExercisesByFilters(
         keyword,
         filterQuery,
-        filter
+        filter,
+        this.page
       );
       return data;
     } catch (error) {
@@ -56,6 +62,22 @@ class APIManager {
     } catch (error) {
       Messages.error(error.message);
     }
+  }
+
+  incrementPage() {
+    this.page += 1;
+  }
+
+  decrementPage() {
+    this.page -= 1;
+  }
+
+  resetPage() {
+    this.page = ActionNames.DEFAULT_PAGE_NUMBER;
+  }
+
+  set setCurrentPage(pageValue) {
+    this.page = Number(pageValue);
   }
 }
 

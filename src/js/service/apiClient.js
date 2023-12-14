@@ -24,7 +24,7 @@ export class APIClient {
   async fetchExercisesByFilters(
     keyword = '',
     filterQuery = '',
-    filter = 'Muscles',
+    filter = '',
     page = 1,
     limit = 10
   ) {
