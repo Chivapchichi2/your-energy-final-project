@@ -8,4 +8,6 @@
   --icon-color-white-secondary: rgba(244, 244, 244, 1);
   --title-text-color: #f4f4f4;
   --text-color: rgba(244, 244, 244, 0.6);
+  --footer-copyright-text-color: rgba(198, 205, 209, 1);
+  --transition: 350ms ease-in;
 }
