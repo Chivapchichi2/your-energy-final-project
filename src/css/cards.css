@@ -183,3 +183,10 @@
 .body_parts__info-item-key {
   color: rgba(36, 36, 36, 0.4);
 }
+
+.next-btn {
+  color: var(--secondary-color);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
