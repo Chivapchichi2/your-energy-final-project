@@ -84,6 +84,7 @@
   display: flex;
   gap: 16px;
   margin-bottom: 16px;
+  align-items: center;
 }
 
 .body_parts__excercise-name {
@@ -185,8 +186,12 @@
 }
 
 .next-btn {
-  color: var(--secondary-color);
+  color: var(--main-color);
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.next-btn-svg{
+  fill: var(--main-color);
 }
