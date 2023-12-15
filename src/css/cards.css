@@ -27,7 +27,7 @@
   width: 335px;
   padding: 16px;
   border-radius: 15px;
-  background-color: var(--elem-background-color);
+  background-color: var(--color-white);
   margin-bottom: 20px;
 }
 @media screen and (min-width: 768px){
