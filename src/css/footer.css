@@ -103,8 +103,7 @@
   transition: background-color, color, var(--transition);
 }
 
-.footer-submit-btn:hover,
-.footer-submit-btn:focus {
+.footer-submit-btn:hover {
   background-color: var(--main-color);
   color: var(--icon-color-white-secondary);
 }
@@ -134,7 +133,8 @@
   gap: 8px
 }
 
-.footer-policy-btn {
+.footer-policy-btn,
+.footer-terms-btn {
   background: transparent;
   padding: 0;
   border: none;
@@ -146,7 +146,7 @@
 }
 
 .footer-policy-btn:hover,
-.footer-policy-btn:focus {
+.footer-terms-btn:hover {
   border-bottom: 1px solid var(--footer-copyright-text-color);
 }
 
@@ -183,6 +183,10 @@
 
   .footer-subscribtion-wrapper {
     gap: 32px 0;
+  }
+
+  .subscribe-form {
+    min-width: 352px;
   }
 
   .footer-form-title {
@@ -225,6 +229,6 @@
   }
 
   .footer-copyright-mark {
-    flex-grow: 1;
+    min-width: 352px;
   }
 }
