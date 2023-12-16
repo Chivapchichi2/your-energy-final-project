@@ -1,5 +1,9 @@
 import { APIClient } from './apiClient';
 
+class Pagination {
+  constructor() {}
+}
+
 async function pagination(filter) {
   function render(data) {
     return `${result.data.page} ${result.data.results.map(({ name }) => name)}`;
@@ -16,7 +20,7 @@ async function pagination(filter) {
   let result = await api(filter, currentPage);
   container.innerHTML = render(result);
   console.log('result', result.data);
-  const { perPage, page, totalPages } = result.data;
+  const { totalPages } = result.data;
 
   function pagination() {
     createPageButtons();
@@ -52,7 +56,7 @@ async function pagination(filter) {
         if (currentPage !== parseInt(result.data.page)) {
           result = await api(filter, currentPage);
           updateActiveButtonStates();
-          console.log(result.data);
+
           container.innerHTML = render(result);
         }
       });
