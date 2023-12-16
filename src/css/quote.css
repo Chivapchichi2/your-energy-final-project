@@ -105,7 +105,6 @@
   font-size: 14px;
   line-height: 1.28;
   height: 105px;
-  /* overflow: hidden; */
   overflow-y: auto;
 }
 
@@ -204,6 +203,6 @@
   }
   .recomendation-discription {
     height: 94px;
-    overflow: hidden;
+    overflow-y: auto;
   }
 }

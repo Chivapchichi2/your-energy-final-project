@@ -27,6 +27,7 @@
   font-size: 28px;
   line-height: 1.35; /* 135.714% */
   letter-spacing: -0.56px;
+  font-weight: 400;
 }
 
 .filter__query {
@@ -46,6 +47,7 @@
 .filter__searchBox__input {
   width: 100%;
   outline: none;
+  font-size: 14px;
   border: 1px solid var(--main-color);
   border-radius: 30px;
   padding: 12px 14px;
@@ -170,7 +172,9 @@ button {
     padding-left: 32px;
     padding-right: 32px;
   } */
-
+  .filter__searchBox {
+    width: 273px;
+  }
   .filter__title__container {
     margin-bottom: 32px;
   }
@@ -179,7 +183,9 @@ button {
     flex-direction: row;
     justify-content: space-between;
   }
-
+  .filter__searchBox__input {
+    font-size: 16px;
+  }
   .filter__btnContainer {
     font-size: 16px;
     line-height: 1.5; /* 150% */
