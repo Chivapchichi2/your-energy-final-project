@@ -14,7 +14,7 @@
   margin-bottom: 20px;
 }
 
-.filter__query__specailSign {
+.filter__query__specialSign {
   color: var(--main-color);
   font-size: 28px;
   line-height: 1.35; /* 135.714% */
@@ -112,10 +112,6 @@ button {
   padding: 0;
 }
 
-.hide__element {
-  display: none;
-}
-
 .filter__list {
   display: flex;
   flex-direction: column;
@@ -127,7 +123,13 @@ button {
   border-radius: 12px;
   overflow: hidden;
   height: 225px;
+  width: 335px;
 }
+
+.filter__list__muscles:hover {
+  cursor: pointer;
+}
+
 .filter__list__descr-wrapper {
   position: absolute;
   top: 50%;
@@ -188,7 +190,7 @@ button {
     letter-spacing: -0.88px;
   }
 
-  .filter__query__specailSign {
+  .filter__query__specialSign {
     font-size: 44px;
     line-height: 1.09; /* 109.091% */
     letter-spacing: -0.88px;
@@ -215,4 +217,15 @@ button {
   .filter__btnContainer {
     margin-right: 30px;
   }
+}
+
+.filter__list-link {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+
+.filter__list-link:hover  {
+ cursor: pointer;
 }
