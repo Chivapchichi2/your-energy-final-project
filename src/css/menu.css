@@ -46,7 +46,7 @@
   height: 2px;
   background-color: var(--main-color);
   border-radius: 1px;
-  transition: 400ms;
+  transition: var(--transition);
 }
 
 .change .bar1 {
@@ -89,8 +89,8 @@
   padding: 8px;
   border: solid 1px var(--border-style);
   transition:
-    fill 300ms ease,
-    background-color 300ms ease;
+    fill var(--transition),
+    background-color var(--transition);
 
   border-radius: 10px;
 }
