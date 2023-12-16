@@ -8,6 +8,10 @@ li {
   gap: 8px;
 }
 
+.favorites-error-message{
+  display: none;
+}
+
 .pagination button {
   width: 32px;
   height: 32px;
@@ -232,6 +236,11 @@ li {
   border: none;
   cursor: pointer;
   text-align: center;
+}
+
+.remove-btn{
+  background: none;
+  border: none;
 }
 
 .next-btn-svg{
