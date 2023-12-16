@@ -63,6 +63,7 @@
 
 .body_parts__item-gradebox {
   display: flex;
+  align-items: center;
   gap: 2px;
   width: 38px;
 }
@@ -72,13 +73,9 @@
 }
 
 .body_parts__item-grade-svg{
-  fill:var(--icon-color-yellow)
+  fill:var(--icon-color-yellow);
 }
 
-.body_parts-start-flexbox {
-  display: flex;
-  align-items: center;
-}
 
 .body_parts__excercise-flexbox {
   display: flex;
@@ -190,8 +187,12 @@
   background: none;
   border: none;
   cursor: pointer;
+  text-align: center;
 }
 
 .next-btn-svg{
+  display: inline-flex; 
+  align-items: center;
+  vertical-align: middle;
   fill: var(--main-color);
 }
