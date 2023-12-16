@@ -3,11 +3,11 @@ import { FilterRenderer } from '../tamplates/cardTmp.js';
 import { refs } from './refs';
 import { Exercise } from '../tamplates/exerciseTmp.js';
 import { Utils } from '../utils/utils.js';
+import proxy from '../proxy/proxy.js';
+import debounce from 'debounce';
 
 const filterRenderer = new FilterRenderer(refs.filterList);
 const exercise = new Exercise(refs.filterList);
-
-let activeFilter = 'Muscles';
 
 const filters = {
   Muscles: {
@@ -80,36 +80,40 @@ function disableBtns(str) {
 
 export function handleMusclesFilter() {
   handleFilter('Muscles');
-  activeFilter = 'muscles';
+  proxy.activeFilter = 'muscles';
   toggleInputAndSpecialSign();
 }
 
 export function handleBodyPartsFilter() {
   handleFilter('Body parts');
-  activeFilter = 'bodypart';
+  proxy.activeFilter = 'bodypart';
   toggleInputAndSpecialSign();
 }
 
 export function handleEquipmentFilter() {
   handleFilter('Equipment');
-  activeFilter = 'equipment';
+  proxy.activeFilter = 'equipment';
   toggleInputAndSpecialSign();
 }
 
 export function handleCardClick(e) {
   const card = e.target.closest('.filter__list__muscles');
   if (!card) return;
-  const filter = card.dataset.name;
-  console.log(card.dataset.name);
+  proxy.filterQuery = card.dataset.name;
 
-  apiManager.getExercisesByFilters('', filter, activeFilter).then(data => {
-    console.log(data);
-    exercise.render(data.results);
-  });
-  toggleInputAndSpecialSign(Utils.firstToUpper(filter));
+  apiManager
+    .getExercisesByFilters('', proxy.filterQuery, proxy.activeFilter)
+    .then(({ page, totalPages, results }) => {
+      proxy.currentPage = page;
+      proxy.totalPages = totalPages;
+      exercise.render(results);
+    });
+
+  toggleInputAndSpecialSign(Utils.firstToUpper(proxy.filterQuery));
 }
 
 function toggleInputAndSpecialSign(text = '') {
+  refs.noData.classList.add('hidden');
   if (text === '') {
     refs.inputHolder.classList.add('hidden');
     refs.specialSign.classList.add('hidden');
@@ -119,3 +123,19 @@ function toggleInputAndSpecialSign(text = '') {
   }
   refs.specialText.textContent = text;
 }
+
+export const handleInput = debounce(e => {
+  proxy.query = e.target.value;
+  apiManager
+    .getExercisesByFilters(proxy.query, proxy.filterQuery, proxy.activeFilter)
+    .then(({ page, totalPages, results }) => {
+      proxy.currentPage = page;
+      proxy.totalPages = totalPages;
+      exercise.render(results);
+      if (!results.length) {
+        refs.noData.classList.remove('hidden');
+      } else {
+        refs.noData.classList.add('hidden');
+      }
+    });
+}, proxy.debounceDelay);

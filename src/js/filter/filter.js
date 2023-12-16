@@ -3,6 +3,7 @@ import {
   handleBodyPartsFilter,
   handleEquipmentFilter,
   handleCardClick,
+  handleInput,
 } from './handlers';
 import { refs } from './refs';
 import { ActionNames } from '../misc/names.js';
@@ -27,4 +28,6 @@ export function filterBtnsListeners() {
 
   //card click
   refs.filterList.addEventListener(ActionNames.CLICK, handleCardClick);
+
+  refs.inputField.addEventListener('input', handleInput);
 }

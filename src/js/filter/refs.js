@@ -7,4 +7,5 @@ export const refs = {
   filterList: document.querySelector('.filter__list'),
   specialSign: document.querySelector('.filter__query__specialSign'),
   specialText: document.querySelector('.filter__query'),
+  noData: document.querySelector('.error-block'),
 };
