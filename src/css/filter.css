@@ -91,6 +91,7 @@
   border: none;
   cursor: pointer;
   position: relative;
+  line-height: 1.5;
 }
 
 .filter__btn:not(:last-child) {
@@ -230,12 +231,26 @@ button {
 
 @media screen and (min-width: 1440px) {
   .filter__searchBox__btnContainer__wrapper {
+    height: 48px;
     flex-direction: row;
     justify-content: right;
+    align-items: center;
+    margin-bottom: 32px;
   }
 
-  .filter__btnContainer {
+  .filter__searchBox {
     margin-right: 30px;
+    margin-bottom: 0;
+  }
+  .filter__btnContainer {
+    margin-bottom: 0;
+  }
+  .filter__btn {
+    height: 24px;
+  }
+  .filter__list__muscles-img {
+    width: 290px;
+    height: 242px;
   }
 }
 

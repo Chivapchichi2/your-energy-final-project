@@ -39,9 +39,11 @@ export class Exercise {
           </div>
         </div>
         <div class="body_parts__excercise-flexbox">
-          <svg class="body_parts__excercise-svg" width="24" height="24">
-            <use href="../img/sprite.svg#icon-running-stick-figure"></use>
-          </svg>
+          <div>
+            <svg class="body_parts__excercise-svg" width="24" height="24">
+              <use href="../img/sprite.svg#icon-running-stick-figure"></use>
+            </svg>
+          </div>
           <h3 class="body_parts__excercise-name">${name}</h3>
         </div>
         <ul class="body_parts__info">
