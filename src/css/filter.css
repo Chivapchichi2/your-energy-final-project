@@ -11,7 +11,7 @@
   justify-content: flex-start;
   display: flex;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .filter__query__specailSign {
@@ -114,6 +114,52 @@ button {
 
 .hide__element {
   display: none;
+}
+
+.filter__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 80px;
+}
+.filter__list__muscles {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 225px;
+}
+.filter__list__descr-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.filter__list__muscles-name {
+  color: #f4f4f4;
+  font-size: 20px;
+  line-height: 1;
+}
+.filter__list__filter-tag {
+  color: #f4f4f4;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: 0.4;
+}
+.filter__list__muscles-img {
+  width: 335px;
+  height: 225px;
+  object-fit: cover;
+}
+.filter__list__muscles::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.5);
 }
 
 @media screen and (min-width: 768px) {

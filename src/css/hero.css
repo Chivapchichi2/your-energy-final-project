@@ -1,5 +1,6 @@
 .hero {
-  max-width: 375px;
+  padding-top: 80px;
+  padding-bottom: 40px;
 }
 .tags-img-wrapper {
   display: none;
@@ -11,8 +12,12 @@
 .page-title {
   color: var(--main-color);
   font-size: 38px;
+  font-weight: 400;
   line-height: 1.16;
   margin-bottom: 20px;
+}
+.title-decor {
+  font-style: italic;
 }
 .page-subtitle {
   font-size: 14px;
@@ -43,7 +48,8 @@
 }
 @media screen and (min-width: 767px) {
   .hero {
-    max-width: 768px;
+    padding-top: 100px;
+    padding-bottom: 64px;
   }
   .container {
     padding-left: 32px;
@@ -82,7 +88,7 @@
 }
 @media screen and (min-width: 1439px) {
   .hero {
-    max-width: 1440px;
+    padding-top: 110px;
   }
   .hero-title-tags-wrapper {
     display: flex;
@@ -91,13 +97,16 @@
   .tags-img-wrapper {
     display: flex;
     flex-direction: column;
+    width: 198px;
   }
   .tag-list-desktop {
-    width: 197px;
+    /* width: 199px; */
     flex-wrap: wrap;
   }
   .outdoor-fitness-img {
+    width: 168px;
     border-radius: 20px;
+    margin-left: auto;
     margin-bottom: 32px;
   }
 
