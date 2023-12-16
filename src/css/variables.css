@@ -2,15 +2,14 @@
   --main-color: #242424;
   --secondary-color: rgba(36, 36, 36, 0.5);
   --page-background-color: #f4f4f4;
-  --elem-background-color: #ffffff;
-  --icon-color-white: #ffffff;
+  --color-white: #ffffff;
   --icon-cont-black: rgba(36, 36, 36, 1);
   --icon-color-yellow: #eea10c;
   --icon-color-white-secondary: rgba(244, 244, 244, 1);
-  --title-text-color: #f4f4f4;
   --text-color: rgba(244, 244, 244, 0.6);
   --text-color-light-grey:rgba(36, 36, 36, 0.40);
   --footer-copyright-text-color: rgba(198, 205, 209, 1);
   --border-style: rgba(244, 244, 244, 0.1);
   --transition: 350ms ease-in;
+  --text-color-gray: rgba(36, 36, 36, 0.4);
 }

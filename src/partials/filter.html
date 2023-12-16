@@ -1,50 +1,6 @@
-<div class="filter__container">
-  <div class="filter__title__container">
-    <h2 class="filter__title">Exercises</h2>
-
-    <span class="filter__query__specailSign hide__element">&frasl;</span>
-    <span class="filter__query"></span>
-  </div>
-
-  <div class="filter__searchBox__btnContainer__wrapper">
-    <div class="filter__searchBox hide__element">
-      <input
-        class="filter__searchBox__input"
-        type="text"
-        placeholder="Search"
-      />
-      <button class="filter__searchBox__btn">
-        <svg class="filter__searchBox__icon" fill="black" color="black">
-          <use href="../img/sprite.svg#icon-search"></use>
-        </svg>
-      </button>
-    </div>
-
-    <div class="filter__btnContainer">
-      <button
-        class="filter__btn filter__btn__active"
-        data-filterRequset="Muscles"
-        data-filterDetailedRequset="muscles"
-        disabled
-      >
-        Muscles
-      </button>
-      <button
-        class="filter__btn"
-        data-filterRequset="Body parts"
-        data-filterDetailedRequset="bodypart"
-      >
-        Body parts
-      </button>
-      <button
-        class="filter__btn"
-        data-filterRequset="Equipment"
-        data-filterDetailedRequset="equipment"
-      >
-        Equipment
-      </button>
-    </div>
-  </div>
-
-  <ul class="filter__list"></ul>
+<ul class="filter__list"></ul>
+<div class="error-block hidden">
+  <p class="error-text">
+    Oops! It looks like we couldn't find any results for your query.
+  </p>
 </div>

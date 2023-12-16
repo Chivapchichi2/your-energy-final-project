@@ -19,6 +19,7 @@ export class Messages {
       titleColor: 'green',
       message: message,
       messageColor: 'green',
+
       progressBarColor: 'green',
       ...baseIziToastConfig,
     });

@@ -1,6 +1,5 @@
 .filter__container {
-  padding-left: 20px;
-  padding-right: 20px;
+  margin-bottom: 80px;
 }
 
 .filter__searchBox__btnContainer__wrapper {
@@ -14,7 +13,7 @@
   margin-bottom: 20px;
 }
 
-.filter__query__specailSign {
+.filter__query__specialSign {
   color: var(--main-color);
   font-size: 28px;
   line-height: 1.35; /* 135.714% */
@@ -112,22 +111,24 @@ button {
   padding: 0;
 }
 
-.hide__element {
-  display: none;
-}
-
 .filter__list {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
 }
 .filter__list__muscles {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
   height: 225px;
+  flex-basis: 100%;
 }
+
+.filter__list__muscles:hover {
+  cursor: pointer;
+}
+
 .filter__list__descr-wrapper {
   position: absolute;
   top: 50%;
@@ -163,9 +164,10 @@ button {
 }
 
 @media screen and (min-width: 768px) {
-  .filter__container {
-    padding: 0;
-  }
+  /* .filter__container {
+    padding-left: 32px;
+    padding-right: 32px;
+  } */
 
   .filter__title__container {
     margin-bottom: 32px;
@@ -188,7 +190,7 @@ button {
     letter-spacing: -0.88px;
   }
 
-  .filter__query__specailSign {
+  .filter__query__specialSign {
     font-size: 44px;
     line-height: 1.09; /* 109.091% */
     letter-spacing: -0.88px;
@@ -204,6 +206,18 @@ button {
     font-size: 16px;
     line-height: 1.5; /* 150 */
   }
+  .filter__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 32px;
+    column-gap: 15px;
+  }
+  .filter__list__muscles {
+    flex-basis: calc((100% - 30px) / 3);
+  }
+  .filter__list__muscles-img {
+    width: 225px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -215,4 +229,14 @@ button {
   .filter__btnContainer {
     margin-right: 30px;
   }
+}
+
+.filter__list-link {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.filter__list-link:hover {
+  cursor: pointer;
 }

@@ -35,3 +35,5 @@ function displayQuote(quoteData) {
   quoteTextElement.textContent = quoteData.quote;
   quoteAuthorElement.textContent = quoteData.author;
 }
+
+loadQuote();
