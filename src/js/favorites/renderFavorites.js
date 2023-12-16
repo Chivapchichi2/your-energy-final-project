@@ -17,6 +17,62 @@ const exercisesData = [
     time: 3,
     popularity: 1343,
   },
+  {
+    _id: '64f389465ae26083f39b183e',
+    bodyPart: 'back',
+    equipment: 'cable',
+    gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0180.gif',
+    name: 'cable low seated row',
+    target: 'upper back',
+    description:
+      'This region includes several muscles like the rhomboids and rear deltoids, responsible for scapular retraction and shoulder external rotation. Exercises include rows and face pulls.',
+    rating: 4.17,
+    burnedCalories: 284,
+    time: 3,
+    popularity: 1343,
+  },
+  {
+    _id: '64f389465ae26083f39b183e',
+    bodyPart: 'back',
+    equipment: 'cable',
+    gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0180.gif',
+    name: 'cable low seated row',
+    target: 'upper back',
+    description:
+      'This region includes several muscles like the rhomboids and rear deltoids, responsible for scapular retraction and shoulder external rotation. Exercises include rows and face pulls.',
+    rating: 4.17,
+    burnedCalories: 284,
+    time: 3,
+    popularity: 1343,
+  },
+  {
+    _id: '64f389465ae26083f39b183e',
+    bodyPart: 'back',
+    equipment: 'cable',
+    gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0180.gif',
+    name: 'cable low seated row',
+    target: 'upper back',
+    description:
+      'This region includes several muscles like the rhomboids and rear deltoids, responsible for scapular retraction and shoulder external rotation. Exercises include rows and face pulls.',
+    rating: 4.17,
+    burnedCalories: 284,
+    time: 3,
+    popularity: 1343,
+  },
+  {
+    _id: '64f389465ae26083f39b183e',
+    bodyPart: 'back',
+    equipment: 'cable',
+    gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0180.gif',
+    name: 'cable low seated row',
+    target: 'upper back',
+    description:
+      'This region includes several muscles like the rhomboids and rear deltoids, responsible for scapular retraction and shoulder external rotation. Exercises include rows and face pulls.',
+    rating: 4.17,
+    burnedCalories: 284,
+    time: 3,
+    popularity: 1343,
+  },
 ];
 
 const data = JSON.stringify(exercisesData);
