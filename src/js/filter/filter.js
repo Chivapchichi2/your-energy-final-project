@@ -31,3 +31,5 @@ export function filterBtnsListeners() {
 
   refs.inputField.addEventListener('input', handleInput);
 }
+
+filterBtnsListeners();
