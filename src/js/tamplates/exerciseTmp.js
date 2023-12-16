@@ -13,6 +13,7 @@ export class Exercise {
   render(arr) {
     const markup = arr
       .map(item => {
+        console.log(item);
         const { bodyPart, burnedCalories, name, target, _id, rating, gifUrl } =
           item;
         return `
@@ -22,22 +23,24 @@ export class Exercise {
             <span class="body_parts__item-type">WORKOUT</span>
             <div class="body_parts__item-gradebox">
               <span class="body_parts__item-grade">${rating}</span>
-              <svg class="body_parts__item-grade-svg" width="18px" height="18px">
-                <use href="../img/sprite.svg#icon-star-icon"></use>
-              </svg>
+              <div class="body_parts__item-grade-svg-wrap">
+                <svg class="body_parts__item-grade-svg" >
+                  <use href="../img/sprite.svg#icon-star-icon"></use>
+                </svg>
+              </div>
             </div>
           </div>
           <div class="body_parts-start-flexbox">
             <button class="next-btn" data-id="${_id}">Start
-              <svg class="next-btn-svg" width="16px" height="16px">
+              <svg class="next-btn-svg" width="16" height="16">
                 <use href="../img/sprite.svg#icon-arrow-right"></use>
               </svg>
             </button>
           </div>
         </div>
         <div class="body_parts__excercise-flexbox">
-          <svg class="body_parts__excercise-svg" width="24px" height="24px">
-            <use href="${gifUrl}"></use>
+          <svg class="body_parts__excercise-svg" width="24" height="24">
+            <use href="../img/sprite.svg#icon-running-stick-figure"></use>
           </svg>
           <h3 class="body_parts__excercise-name">${name}</h3>
         </div>

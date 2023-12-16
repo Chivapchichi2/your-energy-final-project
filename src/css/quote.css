@@ -105,7 +105,8 @@
   font-size: 14px;
   line-height: 1.28;
   height: 105px;
-  overflow: hidden;
+  /* overflow: hidden; */
+  overflow-y: auto;
 }
 
 @media (min-width: 768px) {
