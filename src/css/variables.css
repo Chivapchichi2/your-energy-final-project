@@ -4,10 +4,11 @@
   --page-background-color: #f4f4f4;
   --color-white: #ffffff;
   --icon-cont-black: rgba(36, 36, 36, 1);
-  --icon-color-yellow: eea10c;
+  --icon-color-yellow: #eea10c;
   --icon-color-white-secondary: rgba(244, 244, 244, 1);
   --text-color: rgba(244, 244, 244, 0.6);
   --text-color-light-grey:rgba(36, 36, 36, 0.40);
   --footer-copyright-text-color: rgba(198, 205, 209, 1);
+  --border-style: rgba(244, 244, 244, 0.1);
   --transition: 350ms ease-in;
 }

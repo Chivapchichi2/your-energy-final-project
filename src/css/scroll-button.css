@@ -1,0 +1,19 @@
+.scrollToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  opacity: 0;
+  font-size: 16px;
+  border: 1px solid var(--secondary-color);
+  ;
+  border-radius: 16px;
+  padding: 16px 8px;
+  transform: translateY(300px);
+  transition: all .5s ease
+}
+
+.showBtn {
+  opacity: 0.8;
+  transform: translateY(0)
+}
