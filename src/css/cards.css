@@ -78,10 +78,10 @@ li {
   background-color: var(--elem-background-color);
   margin-bottom: 20px;
 }
-@media screen and (min-width: 768px){
-  .body_parts__item{
-    gap: 16px;
-    margin-bottom: 16px;
+@media screen and (min-width: 768px) {
+  .body_parts__item {
+    flex: 0 0 calc(50% - 16px);
+    margin-bottom: 32px;
   }
 
 }
@@ -249,4 +249,3 @@ li {
   vertical-align: middle;
   fill: var(--main-color);
 }
-
