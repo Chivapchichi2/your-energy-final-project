@@ -11,10 +11,11 @@ export class Exercise {
    * @param arr
    */
   render(arr) {
-    const markup = arr.map(item => {
-      const { bodyPart, burnedCalories, name, target, _id, rating, gifUrl } =
-        item;
-      return `
+    const markup = arr
+      .map(item => {
+        const { bodyPart, burnedCalories, name, target, _id, rating, gifUrl } =
+          item;
+        return `
       <li class="body_parts__item">
         <div class="headline_flexbox">
           <div class="grade_flexbox">
@@ -55,7 +56,8 @@ export class Exercise {
           </li>
         </ul>
       </li>`;
-    });
+      })
+      .join('');
 
     this.container.innerHTML = markup;
   }
