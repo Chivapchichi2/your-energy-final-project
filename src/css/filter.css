@@ -240,3 +240,8 @@ button {
 .filter__list-link:hover {
   cursor: pointer;
 }
+
+.bin {
+  border: none;
+  background: transparent;
+}
