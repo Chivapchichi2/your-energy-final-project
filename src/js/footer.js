@@ -1,6 +1,7 @@
 import { Utils } from './utils/utils.js';
 import { Messages } from './service/messages.js';
 import apiManager from './service/apiManager.js';
+import iziToast from 'izitoast';
 
 class Footer {
   static init() {

@@ -1,3 +1,4 @@
+import 'izitoast/dist/css/iziToast.min.css';
 import './js/burger.js';
 import './js/filter/filter.js';
 import './js/quote/quote.js';
