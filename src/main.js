@@ -1,7 +1,8 @@
 import { ActionNames } from './js/misc/names.js';
 import { burgerButton } from './js/burger.js';
-import { listenerPagination } from './js/service/pagination.js';
+import { pagination } from './js/service/pagination.js';
 burgerButton();
+pagination();
 /**
  * Test Js and example import
  */

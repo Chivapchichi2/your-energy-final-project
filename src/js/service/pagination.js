@@ -1,23 +1,21 @@
 import { APIClient } from './apiClient';
 
-async function listenerPagination() {
-  document.addEventListener('DOMContentLoaded', pagination);
-}
-
 console.log('PaGINATION');
 
 const content = document.querySelector('.content');
-const itemsPerPage = 4;
+const test = document.querySelector('.test');
 let currentPage = 1;
-// const items = Array.from(content.querySelectorAll('.item'));
 
 const apiClient = new APIClient();
-
-const result = await apiClient.fetchFiltersOfExercises('Muscles', currentPage);
-
+async function api(page) {
+  return await apiClient.fetchFiltersOfExercises(page);
+}
+let result = await api(currentPage);
+test.innerHTML = `${result.data.page} ${result.data.results.map(
+  ({ name }) => name
+)}`;
 console.log('result', result.data);
 const { perPage, page, totalPages } = result.data;
-console.log(perPage, page, totalPages);
 
 function pagination() {
   createPageButtons();
@@ -35,15 +33,7 @@ function updateActiveButtonStates() {
   });
 }
 
-function showPage(currentPage) {
-  //   const startIndex = page * itemsPerPage;
-  //   const endIndex = startIndex + itemsPerPage;
-  //   items.forEach((item, index) => {
-  //     item.classList.toggle('hidden', index < startIndex || index >= endIndex);
-  //   });
-  currentPage += 1;
-  const result2 = apiClient.fetchFiltersOfExercises((page = currentPage));
-
+function showPage() {
   updateActiveButtonStates();
 }
 
@@ -57,10 +47,18 @@ function createPageButtons() {
   for (let i = 0; i < totalPages; i++) {
     const pageButton = document.createElement('button');
     pageButton.textContent = i + 1;
-    pageButton.addEventListener('click', () => {
-      currentPage = i;
-      showPage(currentPage);
-      updateActiveButtonStates();
+    pageButton.addEventListener('click', async () => {
+      currentPage = i + 1;
+      // showPage(currentPage);
+
+      if (currentPage !== parseInt(result.data.page)) {
+        result = await api(currentPage);
+        updateActiveButtonStates();
+        console.log(result.data);
+        test.innerHTML = `${result.data.page} ${result.data.results.map(
+          ({ name }) => name
+        )}`;
+      }
     });
 
     content.appendChild(paginationContainer);
@@ -68,4 +66,4 @@ function createPageButtons() {
   }
 }
 
-export { listenerPagination };
+export { pagination };

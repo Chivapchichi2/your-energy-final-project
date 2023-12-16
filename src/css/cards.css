@@ -1,0 +1,41 @@
+li {
+  width: 300px;
+  border: 1px solid #000000;
+}
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  gap: 8px;
+}
+
+.pagination button {
+  width: 32px;
+  height: 32px;
+
+  font-family: DM sans;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.96px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #d4d4d4;
+  border: none;
+}
+.hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.pagination button.active,
+.pagination button:hover,
+.pagination button:focus {
+  border-radius: 50%;
+  outline: 1px solid #494a4f;
+
+  color: #242424;
+}

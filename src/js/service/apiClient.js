@@ -9,7 +9,7 @@ export class APIClient {
     axios.defaults.baseURL = 'https://your-energy.b.goit.study/api/';
   }
 
-  async fetchFiltersOfExercises(filter = 'Muscles', page = 1, limit = 12) {
+  async fetchFiltersOfExercises(page = 1, filter = 'Muscles', limit = 12) {
     const params = new URLSearchParams({ filter, page, limit });
 
     const response = await axios.get(`${this.#URL_FILTERS}?${params}`);
