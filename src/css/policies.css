@@ -1,0 +1,24 @@
+.policy-title {
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 32px;
+  color: var(--main-color);
+}
+
+.policy-text {
+  color: var(--main-color);
+  line-height: 1.5;
+}
+
+.text-indent {
+  text-indent: 24px;
+}
+
+.policy-list {
+  list-style: initial;
+  padding-left: 20px;
+}
+
+.policy-link {
+  text-decoration: underline;
+}

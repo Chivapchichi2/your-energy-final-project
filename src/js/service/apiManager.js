@@ -66,8 +66,8 @@ class APIManager {
 
   async subscribe(email) {
     try {
-      const { message } = await this.apiClient.postSubscription(email);
-      return Messages.success(message);
+      const { data } = await this.apiClient.postSubscription(email);
+      Messages.success(data.message);
     } catch (error) {
       Messages.error(error.message);
     }

@@ -1,18 +1,12 @@
-import { Utils } from './utils/utils.js'
+import { Utils } from './utils/utils.js';
 import { Messages } from './service/messages.js';
+import apiManager from './service/apiManager.js';
 
 
 export class Footer {
   static init() {
     const submitBtn = document.querySelector('.footer-submit-btn');
     submitBtn.addEventListener('click', this.submitButtonHandler);
-
-    const policyBtn = document.querySelector('.footer-policy-btn');
-    submitBtn.addEventListener('click', this.submitButtonHandler);
-
-    const termsBtn = document.querySelector('.footer-terms-btn');
-    submitBtn.addEventListener('click', this.submitButtonHandler);
-
    }
   
   static submitButtonHandler(evt) {
@@ -24,7 +18,7 @@ export class Footer {
       Messages.error("Email is not valid");
       return;
     }
-    //   // if input is valid  =>  send request
+    apiManager.subscribe(emailInput.value.trim());
     emailInput.value = "";
   }
 }
