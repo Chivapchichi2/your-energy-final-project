@@ -10,9 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
   
   <script type="module" crossorigin src="/your-energy-final-project/assets/vendor-19302023.js"></script>
-  <script type="module" crossorigin src="/your-energy-final-project/assets/scroll-a6392ed1.js"></script>
+  <script type="module" crossorigin src="/your-energy-final-project/assets/modal-4af5d378.js"></script>
   <link rel="stylesheet" href="/your-energy-final-project/assets/vendor-e5212ee8.css">
-  <link rel="stylesheet" href="/your-energy-final-project/assets/styles-4f804036.css">
+  <link rel="stylesheet" href="/your-energy-final-project/assets/styles-1168902a.css">
 </head>
 <body>
 <div class="quote-container">
@@ -149,6 +149,157 @@
   </ul>
 </div>
 
+<div class="modal-background hide">
+  <div class="modal hide">
+    <button class="modal_close_btn" type="button">
+      <svg
+        class="modal_close_btn_icon"
+        width="24"
+        height="24"
+        aria-label="heart icon"
+      >
+        <use href="/your-energy-final-project/assets/sprite-1b16bd6d.svg#icon-close"></use>
+      </svg>
+    </button>
+    <div class="modal_image_wrap">
+      <img
+        class="modal_image"
+        src=""
+        alt=""
+        onerror="this.onerror = null; this.src ='img/modal/no_image.png'"
+      />
+    </div>
+    <div>
+      <h1 class="modal_title">Modal Tile</h1>
+      <div class="modal_rating_wrap">
+        <span class="modal_rating">4.0</span>
+        <div
+          class="stars"
+          style="--rating: 2.6"
+          aria-label="Rating of this product is 2.3 out of 5."
+        ></div>
+      </div>
+
+      <ul class="modal_list">
+        <li>
+          <p class="modal_list_title">Target</p>
+          <p class="modal_list_data">Cardiovascular system</p>
+        </li>
+        <li>
+          <p class="modal_list_title">Body Part</p>
+          <p class="modal_list_data">N/D</p>
+        </li>
+        <li>
+          <p class="modal_list_title">Equipment</p>
+          <p class="modal_list_data">N/D</p>
+        </li>
+        <li>
+          <p class="modal_list_title">Popular</p>
+          <p class="modal_list_data">N/D</p>
+        </li>
+        <li>
+          <p class="modal_list_title">Burned Calories</p>
+          <p class="modal_list_data">N/D</p>
+        </li>
+      </ul>
+
+      <p class="modal_explanation">
+        This refers to your core muscles, which include the rectus abdominis,
+        obliques, and transverse abdominis. They're essential for maintaining
+        posture, stability, and generating force in many movements. Exercises
+        that target the abs include crunches, leg raises, and planks.
+      </p>
+
+      <div class="modal_btn_wrap">
+        <button class="modal_favorite_btn" type="button">
+          Add to favorites
+          <svg
+            class="modal_btn_icon"
+            width="18"
+            height="18"
+            aria-label="heart icon"
+          >
+            <use href="/your-energy-final-project/assets/sprite-1b16bd6d.svg#icon-heart-icon"></use>
+          </svg>
+        </button>
+        <button class="modal_rating_btn" type="button">Give a rating</button>
+      </div>
+    </div>
+  </div>
+  <div class="modal_set_rating hide">
+    <button class="modal_close_btn" type="button">
+      <svg
+        class="modal_close_btn_icon"
+        width="24"
+        height="24"
+        aria-label="heart icon"
+      >
+        <use href="/your-energy-final-project/assets/sprite-1b16bd6d.svg#icon-close"></use>
+      </svg>
+    </button>
+    <form>
+      <p class="modal_rating_title">Rating</p>
+      <div class="modal_set_rating_wrap">
+        <span class="modal_rating">4.0</span>
+        <label>
+          <input
+            class="visually-hidden"
+            type="checkbox"
+            name="rating"
+            value="1"
+            checked
+          />
+          ★
+        </label>
+        <label>
+          <input
+            class="visually-hidden"
+            type="checkbox"
+            name="rating"
+            value="2"
+          />
+          ★
+        </label>
+        <label>
+          <input
+            class="visually-hidden"
+            type="checkbox"
+            name="rating"
+            value="3"
+          />
+          ★
+        </label>
+        <label>
+          <input
+            class="visually-hidden"
+            type="checkbox"
+            name="rating"
+            value="4"
+          />
+          ★
+        </label>
+        <label>
+          <input
+            class="visually-hidden"
+            type="checkbox"
+            name="rating"
+            value="5"
+          />
+          ★
+        </label>
+      </div>
+
+      <input class="modal_enter_email" type="email" placeholder="Email" />
+      <textarea
+        class="modal_enter_comment"
+        name="comment"
+        placeholder="Your comment"
+      ></textarea>
+
+      <button class="modal_submit_rating_btn" type="submit">Send</button>
+    </form>
+  </div>
+</div>
 
 
 
