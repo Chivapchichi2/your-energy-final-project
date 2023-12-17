@@ -6,3 +6,4 @@ import './js/quote/quote.js';
 import './js/footer.js';
 import './js/tamplates/modal.js';
 import './js/scroll.js';
+import './js/favorites/renderFavorites.js';

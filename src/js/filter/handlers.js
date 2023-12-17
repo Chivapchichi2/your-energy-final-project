@@ -25,12 +25,14 @@ const filters = {
 };
 
 function handleFilter(type) {
-  toggleActiveBtn(type);
-  disableBtns(type);
+  if (refs.musclesFilter && refs.bodyPartsFilter && refs.equipmentFilter) {
+    toggleActiveBtn(type);
+    disableBtns(type);
 
-  apiManager.getFiltersOfExercises(type).then(data => {
-    filterRenderer.render(data.results);
-  });
+    apiManager.getFiltersOfExercises(type).then(data => {
+      filterRenderer.render(data.results);
+    });
+  }
 }
 
 //switch class "active" between buttons
@@ -113,15 +115,17 @@ export function handleCardClick(e) {
 }
 
 function toggleInputAndSpecialSign(text = '') {
-  refs.noData.classList.add('hidden');
+  refs.noData?.classList.add('hidden');
   if (text === '') {
-    refs.inputHolder.classList.add('hidden');
-    refs.specialSign.classList.add('hidden');
+    refs.inputHolder?.classList.add('hidden');
+    refs.specialSign?.classList.add('hidden');
   } else {
-    refs.inputHolder.classList.remove('hidden');
-    refs.specialSign.classList.remove('hidden');
+    refs.inputHolder?.classList.remove('hidden');
+    refs.specialSign?.classList.remove('hidden');
   }
-  refs.specialText.textContent = text;
+  if (refs.specialText) {
+    refs.specialText.textContent = text;
+  }
 }
 
 export const handleInput = debounce(e => {
