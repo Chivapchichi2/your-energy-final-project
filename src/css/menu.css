@@ -22,9 +22,12 @@
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
 }
+.overlow {
+  overflow: hidden;
+}
 .burger {
   z-index: 555;
-  position: fixed;
+  position: absolute;
   top: 20px;
   right: 20px;
   height: 32px;

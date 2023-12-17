@@ -1,5 +1,6 @@
 @media screen and (max-width: 767px) {
   .header-section {
+    position: relative;
     padding-top: 20px;
     padding-bottom: 80px;
   }
