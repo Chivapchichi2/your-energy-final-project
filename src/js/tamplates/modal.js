@@ -18,7 +18,7 @@ excessesList?.addEventListener('click', event => {
   }
 });
 
-async function getModalData(id) {
+export async function getModalData(id) {
   const data = await apiManager.getExercisesByID(id);
   renderExcessesModal(data);
   openModal();
