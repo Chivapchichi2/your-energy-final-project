@@ -32,4 +32,6 @@ export function filterBtnsListeners() {
   refs.inputField.addEventListener('input', handleInput);
 }
 
-filterBtnsListeners();
+if (refs.musclesFilter && refs.bodyPartsFilter && refs.equipmentFilter) {
+  filterBtnsListeners();
+}

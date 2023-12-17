@@ -2,28 +2,29 @@
  * Exercise class
  */
 export class Exercise {
-  constructor(container) {
+  constructor(container, favorite = false) {
     this.container = container;
+    this.favorite = favorite;
   }
 
   /**
    * Render exercise
    * @param arr
    */
-  render(arr, favorite = false) {
+  render(arr) {
     const markup = arr
       .map(item => {
         const { bodyPart, burnedCalories, name, target, _id, rating, gifUrl } =
           item;
-        const ratingMarkup = favorite
+        const ratingMarkup = this.favorite
           ? `<button class="bin" data-id="${_id}">
               <svg class="next-btn-svg" width="16px" height="16px">
-                <use href="./img/sprite.svg#icon-bin"></use>
+                <use href="../img/sprite.svg#icon-bin"></use>
               </svg>
             </button>`
           : `<span class="body_parts__item-grade">${rating}</span>
               <svg class="body_parts__item-grade-svg" width="18px" height="18px">
-                <use href="./img/sprite.svg#icon-star-icon"></use>
+                <use href="../img/sprite.svg#icon-star-icon"></use>
               </svg>`;
         return `
       <li class="body_parts__item">
@@ -37,7 +38,7 @@ export class Exercise {
           <div class="body_parts-start-flexbox">
             <button class="next-btn" data-id="${_id}">Start
               <svg class="next-btn-svg" width="16px" height="16px">
-                <use href="./img/sprite.svg#icon-arrow-right"></use>
+                <use href="../img/sprite.svg#icon-arrow-right"></use>
               </svg>
             </button>
           </div>

@@ -1,6 +1,10 @@
+import { Exercise } from '../tamplates/exerciseTmp.js';
+
 const favoritesList = document.querySelector('.favorites-list');
 const emptyStorageMsg = document.querySelector('.favorites-error-message');
 // const filterList = document.querySelector('.exercises');
+
+const exercise = new Exercise(favoritesList, true);
 
 const exercisesData = [
   {
@@ -86,61 +90,7 @@ function renderFavorites() {
   if (!localData) {
     emptyStorageMsg.style.display = 'block';
   } else {
-    const markup = localData
-      .map(({ _id, name, burnedCalories, bodyPart, target }) => {
-        return `
-    <li class="body_parts__item" id=${_id}>
-        <div class="headline_flexbox">
-          <div class="grade_flexbox">
-          <div class="body_parts_remove-wraper">
-              <span class="body_parts__item-type">WORKOUT</span>
-              <button type="button" class="remove-btn"><svg
-                class="remove-svg"
-                width="16px"
-                height="16px"
-              >
-                <use href="../img/sprite.svg#icon-remove-icon"></use>
-              </svg>
-              </button>
-            </div>
-          </div>
-          <div class="body_parts-start-flexbox">
-            <button class="next-btn">Start
-            <svg class="next-btn-svg" width="16px" height="16px">
-              <use href="../img/sprite.svg#icon-arrow-right"></use>
-            </svg>
-            </button>
-          </div>
-        </div>
-        <div class="body_parts__excercise-flexbox">
-
-            <svg class="body_parts__excercise-svg" width="24px" height="24px">
-            <use href="../img/sprite.svg#icon-running-stick-figure"></use>
-          </svg>
-
-          <h3 class="body_parts__excercise-name">${name}</h3>
-        </div>
-
-        <ul class="body_parts__info">
-          <li class="body_parts__info-item">
-            <span class="body_parts__info-item-key">Burned calories:</span>
-            <span class="body_parts__info-item-value">${burnedCalories}</span>
-          </li>
-          <li class="body_parts__info-item">
-            <span class="body_parts__info-item-key">Body part:</span>
-            <span class="body_parts__info-item-value">${bodyPart}</span>
-          </li>
-          <li class="body_parts__info-item">
-            <span class="body_parts__info-item-key">Target:</span>
-            <span class="body_parts__info-item-value">${target}</span>
-          </li>
-        </ul>
-      </li>
-    `;
-      })
-      .join('');
-
-    favoritesList.insertAdjacentHTML('beforeend', markup);
+    exercise.render(localData);
   }
 }
 renderFavorites();

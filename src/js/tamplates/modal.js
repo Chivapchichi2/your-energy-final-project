@@ -6,7 +6,7 @@ const FAVORITES_LS_KEY = 'favorites';
 const backgroundElement = document.querySelector('.modal-background');
 const excessesList = document.querySelector('.filter__list');
 
-excessesList.addEventListener('click', event => {
+excessesList?.addEventListener('click', event => {
   const clickedElement = event.target;
   if (
     clickedElement.classList.contains('next-btn') ||
