@@ -3,6 +3,7 @@ import apiManager from './apiManager.js';
 import { renderCurrentPage } from '../filter/handlers.js';
 
 function pagination(container) {
+  container.innerHTML = '';
   function paginationStart() {
     createPageButtons();
     showPage(proxy.currentPage);
@@ -11,7 +12,7 @@ function pagination(container) {
   function updateActiveButtonStates() {
     const pageButtons = document.querySelectorAll('.pagination button');
     pageButtons.forEach((button, index) => {
-      if (index === proxy.currentPage - 1) {
+      if (Number(button.textContent) === proxy.currentPage) {
         button.classList.add('active');
       } else {
         button.classList.remove('active');
@@ -28,19 +29,51 @@ function pagination(container) {
     const paginationDiv = document.body.appendChild(paginationContainer);
     paginationContainer.classList.add('pagination');
 
-    for (let i = 0; i < proxy.totalPages; i++) {
+    const createButton = (pageNumber, label) => {
       const pageButton = document.createElement('button');
-      pageButton.textContent = i + 1;
+      pageButton.textContent = label || pageNumber;
       pageButton.addEventListener('click', () => {
-        proxy.currentPage = i + 1;
+        if (typeof pageNumber === 'boolean') {
+          proxy.currentPage += pageNumber ? 1 : -1;
+        } else {
+          proxy.currentPage = pageNumber;
+        }
         apiManager.updatePage();
         updateActiveButtonStates();
         renderCurrentPage();
       });
+      return pageButton;
+    };
 
-      container.appendChild(paginationContainer);
-      paginationDiv.appendChild(pageButton);
+    const addEllipsis = after => {
+      paginationContainer.appendChild(createButton(after, '...'));
+    };
+
+    // Add the first page button
+    paginationContainer.appendChild(createButton(1));
+
+    // Add '...' if necessary
+    if (proxy.currentPage >= 3) {
+      addEllipsis(false);
     }
+
+    // Add three adjacent buttons to the current page
+    for (
+      let i = Math.max(2, proxy.currentPage - 1);
+      i <= Math.min(proxy.totalPages - 1, proxy.currentPage + 1);
+      i++
+    ) {
+      paginationContainer.appendChild(createButton(i));
+    }
+
+    // Add '...' if necessary
+    if (proxy.currentPage <= proxy.totalPages - 2) {
+      addEllipsis(true);
+    }
+
+    // Add the last page button
+    paginationContainer.appendChild(createButton(proxy.totalPages));
+    container.appendChild(paginationContainer);
   }
 
   if (proxy.totalPages > 1) {
