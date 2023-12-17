@@ -61,11 +61,16 @@
   }
   .content {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-start;
   }
   .body_parts__item {
     flex-basis: calc((100% - 16px) / 2);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .content {
+    justify-content: flex-start;
   }
 }
 
