@@ -5,6 +5,7 @@ class ProxySingleton {
     }
     ProxySingleton.instance = this;
   }
+  DEFAULT_PAGE_NUMBER = 1;
   debounceDelay = 300;
   activeFilter = 'muscles';
   filterQuery = '';

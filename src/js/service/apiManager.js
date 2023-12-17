@@ -1,11 +1,11 @@
-import { ActionNames } from '../misc/names';
 import { APIClient } from './apiClient';
 import { Messages } from './messages';
+import proxy from '../proxy/proxy.js';
 
 class APIManager {
   constructor() {
     this.apiClient = new APIClient();
-    this.page = ActionNames.DEFAULT_PAGE_NUMBER;
+    this.page = proxy.DEFAULT_PAGE_NUMBER;
   }
 
   async getFiltersOfExercises(filter) {
@@ -88,12 +88,16 @@ class APIManager {
     this.page += 1;
   }
 
+  updatePage() {
+    this.page = proxy.currentPage;
+  }
+
   decrementPage() {
     this.page -= 1;
   }
 
   resetPage() {
-    this.page = ActionNames.DEFAULT_PAGE_NUMBER;
+    this.page = proxy.DEFAULT_PAGE_NUMBER;
   }
 
   set setCurrentPage(pageValue) {

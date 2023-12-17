@@ -5,6 +5,7 @@ import { Exercise } from '../tamplates/exerciseTmp.js';
 import { Utils } from '../utils/utils.js';
 import proxy from '../proxy/proxy.js';
 import debounce from 'debounce';
+import { pagination } from '../service/pagination.js';
 
 const filterRenderer = new FilterRenderer(refs.filterList);
 const exercise = new Exercise(refs.filterList);
@@ -108,7 +109,9 @@ export function handleCardClick(e) {
     .then(({ page, totalPages, results }) => {
       proxy.currentPage = page;
       proxy.totalPages = totalPages;
+      apiManager.updatePage();
       exercise.render(results);
+      pagination(refs.filterList);
     });
 
   toggleInputAndSpecialSign(Utils.firstToUpper(proxy.filterQuery));
@@ -130,16 +133,22 @@ function toggleInputAndSpecialSign(text = '') {
 
 export const handleInput = debounce(e => {
   proxy.query = e.target.value;
+  renderCurrentPage();
+}, proxy.debounceDelay);
+
+export function renderCurrentPage() {
   apiManager
     .getExercisesByFilters(proxy.query, proxy.filterQuery, proxy.activeFilter)
     .then(({ page, totalPages, results }) => {
       proxy.currentPage = page;
       proxy.totalPages = totalPages;
+      apiManager.updatePage();
       exercise.render(results);
       if (!results.length) {
         refs.noData.classList.remove('hidden');
       } else {
         refs.noData.classList.add('hidden');
       }
+      pagination(refs.filterList);
     });
-}, proxy.debounceDelay);
+}
