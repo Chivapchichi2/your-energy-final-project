@@ -169,10 +169,6 @@ button {
 }
 
 @media screen and (min-width: 768px) {
-  /* .filter__container {
-    padding-left: 32px;
-    padding-right: 32px;
-  } */
   .filter__searchBox {
     width: 273px;
   }
@@ -230,6 +226,15 @@ button {
 }
 
 @media screen and (min-width: 1440px) {
+  .filter__container {
+    width: 100%;
+  }
+
+  .error-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .filter__searchBox__btnContainer__wrapper {
     height: 48px;
     flex-direction: row;

@@ -62,5 +62,7 @@ export class APIClient {
       `${this.#URL_EXERCISES}/${id}/${this.#URL_RATING}`,
       params
     );
+
+    return response;
   }
 }

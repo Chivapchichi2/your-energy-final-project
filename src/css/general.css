@@ -57,15 +57,21 @@ body {
 
 /* ---LOADER--- */
 
+.loader-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .loader {
-  width: 48px;
-  height: 48px;
-  border: 5px dotted #fff;
+  width: 75px;
+  height: 75px;
+  border: 5px dotted var(--main-color);
   border-radius: 50%;
-  display: inline-block;
+  display: block;
   position: relative;
   box-sizing: border-box;
-  animation: rotation 2s linear infinite;
+  animation: rotation 5s linear infinite;
 }
 
 @keyframes rotation {
