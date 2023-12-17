@@ -29,6 +29,7 @@ function handleFilter(type) {
   if (refs.musclesFilter && refs.bodyPartsFilter && refs.equipmentFilter) {
     toggleActiveBtn(type);
     disableBtns(type);
+    refs.filterList.innerHTML = '';
     apiManager.resetPage();
     refs.paginationContainer.innerHTML = '';
     apiManager.getFiltersOfExercises(type).then(data => {
@@ -104,6 +105,7 @@ export function handleCardClick(e) {
   const card = e.target.closest('.filter__list__muscles');
   if (!card) return;
   proxy.filterQuery = card.dataset.name;
+  refs.filterList.innerHTML = '';
   apiManager.resetPage();
   apiManager
     .getExercisesByFilters('', proxy.filterQuery, proxy.activeFilter)
@@ -134,6 +136,7 @@ function toggleInputAndSpecialSign(text = '') {
 
 export const handleInput = debounce(e => {
   proxy.query = e.target.value;
+  refs.filterList.innerHTML = '';
   renderCurrentPage();
 }, proxy.debounceDelay);
 
