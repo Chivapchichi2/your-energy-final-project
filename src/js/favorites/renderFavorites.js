@@ -5,7 +5,7 @@ const content = document.querySelector('.content');
 const favoritesList = document.querySelector('.favorites-list');
 const emptyStorageMsg = document.querySelector('.favorites-error-message');
 
-const exercise = new Exercise(favoritesList, true);
+export const exercise = new Exercise(favoritesList, true);
 
 function handleNextButtonClick(clickedElement) {
   const dataId = clickedElement.closest('.next-btn').getAttribute('data-id');
