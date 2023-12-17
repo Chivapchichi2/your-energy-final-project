@@ -17,18 +17,18 @@ It can be › `+b);return}a||window.innerWidth<=u?i.position=="bottomLeft"||i.po
             <div class="body_parts__item-gradebox">
               ${this.favorite?`<button class="bin" data-id="${y}">
               <svg class="next-btn-svg" width="16px" height="16px">
-                <use href="./sprite.svg#icon-bin"></use>
+                <use href="../../img/sprite.svg#icon-bin"></use>
               </svg>
             </button>`:`<span class="body_parts__item-grade">${b}</span>
               <svg class="body_parts__item-grade-svg" width="18px" height="18px">
-                <use href="./sprite.svg#icon-star-icon"></use>
+                <use href="../../img/sprite.svg#icon-star-icon"></use>
               </svg>`}
             </div>
           </div>
           <div class="body_parts-start-flexbox">
             <button class="next-btn" data-id="${y}">Start
               <svg class="next-btn-svg" width="16px" height="16px">
-                <use href="./sprite.svg#icon-arrow-right"></use>
+                <use href="../../img/sprite.svg#icon-arrow-right"></use>
               </svg>
             </button>
           </div>
