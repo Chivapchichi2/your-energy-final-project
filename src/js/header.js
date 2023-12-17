@@ -4,7 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const homePage = document.querySelector('#home');
   const favouritesPage = document.querySelector('#favorites');
 
-  if (currentUrl.href === homePage.href || currentUrl.pathname === '/') {
+  if (
+    currentUrl.href === homePage.href ||
+    currentUrl.pathname === '/' ||
+    currentUrl.pathname === '/your-energy-final-project/'
+  ) {
     favouritesPage.classList.remove('current-page');
     homePage.classList.add('current-page');
   }
