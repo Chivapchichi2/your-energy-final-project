@@ -8,4 +8,5 @@ export const refs = {
   specialSign: document.querySelector('.filter__query__specialSign'),
   specialText: document.querySelector('.filter__query'),
   noData: document.querySelector('.error-block'),
+  paginationContainer: document.querySelector('.pagination__container'),
 };
