@@ -1,5 +1,6 @@
 import apiManager from '../service/apiManager';
 import { renderSetRatingModal } from './setRatingModal';
+import { Utils } from '../utils/utils.js';
 
 const FAVORITES_LS_KEY = 'favorites';
 
@@ -44,7 +45,7 @@ function renderExcessesModal(data) {
         height="24"
         aria-label="heart icon"
       >
-        <use href="./img/sprite.svg#icon-close"></use>
+        <use href="${Utils.getPath()}#icon-close"></use>
       </svg>
     </button>
     <div class="modal_image_wrap">
@@ -104,7 +105,7 @@ function renderExcessesModal(data) {
             height="18"
             aria-label="heart icon"
           >
-            <use href="./img/sprite.svg#icon-heart-icon"></use>
+            <use href="${Utils.getPath()}#icon-heart-icon"></use>
           </svg>
         </button>
         <button class="modal_rating_btn" type="button">Give a rating</button>
