@@ -19,7 +19,7 @@ let rootElement;
 export default function setupScroller() {
   const scrollToTopBtn = document.getElementById('scrollToTopBtn');
   let target = document.querySelector('.observer-area');
-  let observer = new IntersectionObserver(checkScrollButton);
+  let observer = new IntersectionObserver(checkScrollButton, {threshold: 0.2});
   observer.observe(target);
   rootElement = document.documentElement;
   scrollToTopBtn.addEventListener('click', scrollToTop);

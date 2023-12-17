@@ -105,7 +105,7 @@
   font-size: 14px;
   line-height: 1.28;
   height: 105px;
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 @media (min-width: 768px) {
@@ -203,6 +203,24 @@
   }
   .recomendation-discription {
     height: 94px;
-    overflow: hidden;
+    overflow-y: auto;
   }
+}
+/* scroll bar styles */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 100%;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

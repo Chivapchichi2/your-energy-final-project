@@ -1,3 +1,6 @@
+.filter-quote-container {
+  margin-bottom: 80px;
+}
 @media screen and (min-width: 1440px) {
   .filter-quote-container {
     display: flex;
