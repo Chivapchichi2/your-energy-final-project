@@ -1,6 +1,7 @@
 import apiManager from '../service/apiManager';
 import { closeModal } from './modal';
 import { Utils } from '../utils/utils.js';
+import { Messages } from '../service/messages';
 const backgroundElement = document.querySelector('.modal-background');
 
 function changeRatingNumberTemplate(checked, rating) {
@@ -20,19 +21,31 @@ function addEventListenerOnStars() {
   });
 }
 
+function preparedDataToSend(event, id) {
+  const formData = new FormData(event.target);
+  let preparedData = { id };
+  formData.forEach((value, key) => {
+    preparedData = {
+      ...preparedData,
+      [key]: key === 'rate' ? Number(value) : value,
+    };
+  });
+  return preparedData;
+}
+
 function addEventListenerOnSubmit() {
   const form = document.querySelector('.modal_set_rating_form');
   form.addEventListener('submit', event => {
     event.preventDefault();
-    const formData = new FormData(event.target);
-    let preparedData = { id: form.dataset.id };
-    formData.forEach((value, key) => {
-      preparedData = {
-        ...preparedData,
-        [key]: key === 'rate' ? Number(value) : value,
-      };
-    });
-    sendRatingData(preparedData);
+    const data = preparedDataToSend(event, form.dataset.id);
+    const isEmailValid = Utils.validateEmail(data.email.trim());
+    if (!isEmailValid) {
+      Messages.error(
+        'Email is not valid. Please check if your input have "@" and "." symbols'
+      );
+      return;
+    }
+    sendRatingData(data);
   });
 }
 
@@ -49,8 +62,8 @@ function setCheckedAttribute(checkboxes, checkbox, index) {
 }
 
 async function sendRatingData(data) {
-  console.log('data to send', data);
   await apiManager.sendRating(data);
+  Messages.success('Rating was changed');
   closeModal();
 }
 

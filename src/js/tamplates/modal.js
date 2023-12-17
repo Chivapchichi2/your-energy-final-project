@@ -1,6 +1,7 @@
 import apiManager from '../service/apiManager';
 import { renderSetRatingModal } from './setRatingModal';
 import { Utils } from '../utils/utils.js';
+import { exercise } from '../favorites/renderFavorites.js';
 
 const FAVORITES_LS_KEY = 'favorites';
 
@@ -11,7 +12,8 @@ excessesList?.addEventListener('click', event => {
   const clickedElement = event.target;
   if (
     clickedElement.classList.contains('next-btn') ||
-    clickedElement.parentElement.classList.contains('next-btn')
+    clickedElement.parentElement?.classList.contains('next-btn') ||
+    clickedElement.parentElement?.classList.contains('next-btn-svg')
   ) {
     const dataId = clickedElement.closest('.next-btn').getAttribute('data-id');
     getModalData(dataId);
@@ -98,15 +100,6 @@ function renderExcessesModal(data) {
 
       <div class="modal_btn_wrap">
         <button class="modal_favorite_btn" type="button">
-          Add to favorites
-          <svg
-            class="modal_btn_icon"
-            width="18"
-            height="18"
-            aria-label="heart icon"
-          >
-            <use href="${Utils.getPath()}#icon-heart-icon"></use>
-          </svg>
         </button>
         <button class="modal_rating_btn" type="button">Give a rating</button>
       </div>
@@ -115,6 +108,7 @@ function renderExcessesModal(data) {
   backgroundElement.innerHTML = template;
 
   addEventListenerRatingBtn(id);
+  renderFavoriteBtnTemplate(id);
   addEventListenerFavoriteBtn(data);
 }
 
@@ -131,6 +125,7 @@ function addEventListenerFavoriteBtn(data) {
 
   favoriteBtn.addEventListener('click', event => {
     addOrDeleteExcessesToLS(data);
+    renderFavoriteBtnTemplate(data._id);
   });
 }
 
@@ -139,33 +134,97 @@ function addOrDeleteExcessesToLS(data) {
   if (!lsData.some(item => item._id === data._id)) {
     localStorage.setItem(FAVORITES_LS_KEY, JSON.stringify([...lsData, data]));
   } else {
-    localStorage.setItem(
-      FAVORITES_LS_KEY,
-      JSON.stringify(lsData.filter(item => item._id !== data._id))
-    );
+    const dataToLs = lsData.filter(item => item._id !== data._id);
+    localStorage.setItem(FAVORITES_LS_KEY, JSON.stringify(dataToLs));
+    const favoritesList = document.querySelector('.favorites-list');
+    favoritesList && exercise.render(dataToLs);
   }
 }
 
 function openModal() {
   backgroundElement.classList.remove('hide');
+  addEventListenerOnBackground();
+  frizeScroll();
+}
+
+function addEventListenerOnBackground() {
+  backgroundElement.addEventListener('click', handlerClickBackgroundElement);
+  document.addEventListener('keyup', handlerPressEsc);
+}
+
+function handlerPressEsc(event) {
+  if (event.key === 'Escape') {
+    closeModal();
+  }
 }
 
 function switchFromExcessesToRatingModal(id) {
   renderSetRatingModal(id);
 }
 
-backgroundElement.addEventListener('click', event => {
+function renderFavoriteBtnTemplate(id) {
+  const addFavoriteTemplate = `Add favorites
+          <svg
+            class="modal_btn_icon"
+            width="18"
+            height="18"
+            aria-label="heart icon"
+          >
+            <use href="${Utils.getPath()}#icon-heart-icon"></use>
+          </svg>`;
+  const deleteFavoriteTemplate = `Remove favorites
+          <svg
+            class="modal_btn_icon"
+            width="18"
+            height="18"
+            aria-label="heart icon"
+          >
+            <use href="${Utils.getPath()}#icon-bin"></use>
+          </svg>`;
+  const favoriteBtn = document.querySelector('.modal_favorite_btn');
+  const favoriteDataFromLs = JSON.parse(localStorage.getItem(FAVORITES_LS_KEY));
+
+  if (!favoriteDataFromLs) {
+    favoriteBtn.innerHTML = addFavoriteTemplate;
+    return;
+  }
+
+  if (favoriteDataFromLs.some(item => item._id === id)) {
+    favoriteBtn.innerHTML = deleteFavoriteTemplate;
+  } else {
+    favoriteBtn.innerHTML = addFavoriteTemplate;
+  }
+}
+
+function handlerClickBackgroundElement(event) {
   const clickedElement = event.target;
   if (
     clickedElement.classList.contains('modal-background') ||
     clickedElement.classList.contains('modal_close_btn') ||
-    clickedElement.parentElement.classList.contains('modal_close_btn')
+    clickedElement.parentElement?.classList.contains('modal_close_btn') ||
+    clickedElement.parentElement?.classList.contains('modal_close_btn_icon')
   ) {
     closeModal();
+    backgroundElement.removeEventListener(
+      'click',
+      handlerClickBackgroundElement
+    );
+    document.removeEventListener('keyup', handlerPressEsc);
   }
-});
+}
+
+function frizeScroll() {
+  const body = document.querySelector('body');
+  body.classList.add('modal-frize-scroll');
+}
+
+function unFrizeScroll() {
+  const body = document.querySelector('body');
+  body.classList.remove('modal-frize-scroll');
+}
 
 export function closeModal() {
   backgroundElement.classList.add('hide');
   backgroundElement.innerHTML = '';
+  unFrizeScroll();
 }
