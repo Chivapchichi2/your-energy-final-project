@@ -9,7 +9,7 @@ It can be › `+b);return}a||window.innerWidth<=u?i.position=="bottomLeft"||i.po
                           <span class="filter__list__filter-tag">${s.filter}</span>
                       </div>
                       ${r}
-                </li>`}).join("");this.container.innerHTML=n}}const S={musclesFilter:document.querySelector('[data-filterRequset="Muscles"]'),bodyPartsFilter:document.querySelector('[data-filterRequset="Body parts"]'),equipmentFilter:document.querySelector('[data-filterRequset="Equipment"]'),inputHolder:document.querySelector(".filter__searchBox"),inputField:document.querySelector(".filter__searchBox__input"),filterList:document.querySelector(".filter__list"),specialSign:document.querySelector(".filter__query__specialSign"),specialText:document.querySelector(".filter__query"),noData:document.querySelector(".error-block")};class Et{constructor(t,n=!1){this.container=t,this.favorite=n}render(t){const n=t.map(s=>{const{bodyPart:r,burnedCalories:a,name:l,target:d,_id:y,rating:b,gifUrl:h}=s;return`
+                </li>`}).join("");this.container.innerHTML=n}}const S={musclesFilter:document.querySelector('[data-filterRequset="Muscles"]'),bodyPartsFilter:document.querySelector('[data-filterRequset="Body parts"]'),equipmentFilter:document.querySelector('[data-filterRequset="Equipment"]'),inputHolder:document.querySelector(".filter__searchBox"),inputField:document.querySelector(".filter__searchBox__input"),filterList:document.querySelector(".filter__list"),specialSign:document.querySelector(".filter__query__specialSign"),specialText:document.querySelector(".filter__query"),noData:document.querySelector(".error-block")};class Et{constructor(t,n=!1){this.container=t,this.favorite=n,this.path="../../img/sprite.svg"}render(t){const n=t.map(s=>{const{bodyPart:r,burnedCalories:a,name:l,target:d,_id:y,rating:b,gifUrl:h}=s;return`
       <li class="body_parts__item">
         <div class="headline_flexbox">
           <div class="grade_flexbox">
@@ -17,18 +17,18 @@ It can be › `+b);return}a||window.innerWidth<=u?i.position=="bottomLeft"||i.po
             <div class="body_parts__item-gradebox">
               ${this.favorite?`<button class="bin" data-id="${y}">
               <svg class="next-btn-svg" width="16px" height="16px">
-                <use href="../../img/sprite.svg#icon-bin"></use>
+                <use href="${this.path}#icon-bin"></use>
               </svg>
             </button>`:`<span class="body_parts__item-grade">${b}</span>
               <svg class="body_parts__item-grade-svg" width="18px" height="18px">
-                <use href="../../img/sprite.svg#icon-star-icon"></use>
+                <use href="${this.path}#icon-star-icon"></use>
               </svg>`}
             </div>
           </div>
           <div class="body_parts-start-flexbox">
             <button class="next-btn" data-id="${y}">Start
               <svg class="next-btn-svg" width="16px" height="16px">
-                <use href="../../img/sprite.svg#icon-arrow-right"></use>
+                <use href="${this.path}#icon-arrow-right"></use>
               </svg>
             </button>
           </div>
