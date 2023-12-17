@@ -102,9 +102,7 @@
     align-items: flex-start;
     gap: 32px;
   }
-  .favorites_body_parts__item {
-    max-width: 405px;
-  }
+
   ::-webkit-scrollbar {
     width: 5px;
     height: 100%;
