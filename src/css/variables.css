@@ -7,9 +7,13 @@
   --icon-color-yellow: #eea10c;
   --icon-color-white-secondary: rgba(244, 244, 244, 1);
   --text-color: rgba(244, 244, 244, 0.6);
-  --text-color-light-grey:rgba(36, 36, 36, 0.40);
+  --text-color-light-grey: rgba(36, 36, 36, 0.4);
+  --text-color-second: rgba(244, 244, 244, 0.4);
   --footer-copyright-text-color: rgba(198, 205, 209, 1);
   --border-style: rgba(244, 244, 244, 0.1);
   --transition: 350ms ease-in;
   --text-color-gray: rgba(36, 36, 36, 0.4);
+  --modal-background: rgba(4, 4, 4, 0.4);
+  --star-size: 16px;
+  --star-color: rgba(244, 244, 244, 0.2);
 }

@@ -73,14 +73,9 @@ class APIManager {
     }
   }
 
-  async sendRating(id, rate, email, review) {
+  async sendRating(data) {
     try {
-      const response = await this.apiClient.patchExerciseRating(
-        id,
-        rate,
-        email,
-        review
-      );
+      const response = await this.apiClient.patchExerciseRating(data);
       return response;
     } catch (error) {
       Messages.error(error.message);

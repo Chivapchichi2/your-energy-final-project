@@ -52,7 +52,7 @@ export class APIClient {
     return response;
   }
 
-  async patchExerciseRating(id, rate, email, review) {
+  async patchExerciseRating({ id, rate, email, review }) {
     const params = {
       rate,
       email,
