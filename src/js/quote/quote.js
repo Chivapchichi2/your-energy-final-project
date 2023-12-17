@@ -6,7 +6,13 @@ export function loadQuote() {
   const today = new Date().toDateString();
 
   if (storedQuote && storedDate === today) {
-    displayQuote(JSON.parse(storedQuote));
+    try {
+      const quoteData = JSON.parse(storedQuote);
+      displayQuote(quoteData);
+    } catch (error) {
+      console.error('Error parsing stored quote:', error);
+      fetchQuote();
+    }
   } else {
     fetchQuote();
   }
