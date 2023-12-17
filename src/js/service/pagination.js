@@ -1,18 +1,17 @@
-function pagination(object, container) {
-  let currentPage = object.currentPage;
-  let totalPages = object.totalPages;
+import proxy from '../proxy/proxy.js';
+import apiManager from './apiManager.js';
+import { renderCurrentPage } from '../filter/handlers.js';
 
-  const content = container;
-
+function pagination(container) {
   function paginationStart() {
     createPageButtons();
-    showPage(currentPage);
+    showPage(proxy.currentPage);
   }
 
   function updateActiveButtonStates() {
     const pageButtons = document.querySelectorAll('.pagination button');
     pageButtons.forEach((button, index) => {
-      if (index === currentPage - 1) {
+      if (index === proxy.currentPage - 1) {
         button.classList.add('active');
       } else {
         button.classList.remove('active');
@@ -29,23 +28,22 @@ function pagination(object, container) {
     const paginationDiv = document.body.appendChild(paginationContainer);
     paginationContainer.classList.add('pagination');
 
-    for (let i = 0; i < totalPages; i++) {
+    for (let i = 0; i < proxy.totalPages; i++) {
       const pageButton = document.createElement('button');
       pageButton.textContent = i + 1;
       pageButton.addEventListener('click', () => {
-        currentPage = i + 1;
-
-        if (currentPage !== object.currentPage) {
-          updateActiveButtonStates();
-        }
+        proxy.currentPage = i + 1;
+        apiManager.updatePage();
+        updateActiveButtonStates();
+        renderCurrentPage();
       });
 
-      content.appendChild(paginationContainer);
+      container.appendChild(paginationContainer);
       paginationDiv.appendChild(pageButton);
     }
   }
 
-  if (totalPages > 1) {
+  if (proxy.totalPages > 1) {
     paginationStart();
   }
 }
