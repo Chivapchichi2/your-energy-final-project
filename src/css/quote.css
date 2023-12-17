@@ -40,7 +40,7 @@
 }
 
 .icon-container svg {
-  fill: var(--icon-color-white);
+  fill: var(--color-white);
 }
 .icon-container-weight {
   display: flex;
@@ -57,7 +57,7 @@
 }
 
 .quote-title {
-  color: var(--title-text-color);
+  color: var(--page-background-color);
   font-size: 20px;
   font-weight: 500;
   line-height: 1;
@@ -72,14 +72,14 @@
 }
 
 .name-text {
-  color: var(--title-text-color);
+  color: var(--page-background-color);
   font-size: 14px;
   margin: 0;
 }
 
 .recomendation {
   gap: 18px;
-  background: var(--elem-background-color);
+  background: var(--color-white);
   border-radius: 20px;
   display: flex;
   padding: 20px;
@@ -105,7 +105,7 @@
   font-size: 14px;
   line-height: 1.28;
   height: 105px;
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 @media (min-width: 768px) {
@@ -203,6 +203,24 @@
   }
   .recomendation-discription {
     height: 94px;
-    overflow: hidden;
+    overflow-y: auto;
   }
+}
+/* scroll bar styles */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 100%;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

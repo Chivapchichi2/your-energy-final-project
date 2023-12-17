@@ -69,7 +69,6 @@
 .footer-slogan {
   font-size: 38px;
   line-height: 1.5;
-  font-style: italic;
   font-weight: 400;
 }
 
@@ -179,6 +178,11 @@
   .footer-slogan {
     font-size: 56px;
     line-height: 1.07;
+    letter-spacing: 0.02em;
+  }
+
+  .footer-slogan-italic {
+    font-style: italic;
   }
 
   .footer-subscribtion-wrapper {

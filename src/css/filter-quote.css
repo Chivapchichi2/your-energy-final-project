@@ -1,0 +1,11 @@
+.filter-quote-container {
+  margin-bottom: 80px;
+}
+@media screen and (min-width: 1440px) {
+  .filter-quote-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 32px;
+  }
+}

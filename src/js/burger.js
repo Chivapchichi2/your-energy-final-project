@@ -7,4 +7,5 @@ function burgerButton() {
     mobileMenu.classList.toggle('is-hidden');
   });
 }
-export { burgerButton };
+
+burgerButton();

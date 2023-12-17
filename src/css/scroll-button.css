@@ -1,12 +1,11 @@
 .scrollToTopBtn {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 20px;
+  right: 20px;
   z-index: 100;
   opacity: 0;
   font-size: 16px;
   border: 1px solid var(--secondary-color);
-  ;
   border-radius: 16px;
   padding: 16px 8px;
   transform: translateY(300px);
@@ -16,4 +15,11 @@
 .showBtn {
   opacity: 0.8;
   transform: translateY(0)
+}
+
+@media screen and (min-width: 1440px) {
+  .scrollToTopBtn {
+    bottom: 30px;
+    right: 30px;
+  }
 }

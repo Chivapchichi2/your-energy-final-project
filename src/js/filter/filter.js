@@ -2,19 +2,34 @@ import {
   handleMusclesFilter,
   handleBodyPartsFilter,
   handleEquipmentFilter,
-  renderMusclesOnLoad,
+  handleCardClick,
+  handleInput,
 } from './handlers';
 import { refs } from './refs';
+import { ActionNames } from '../misc/names.js';
 
 export function filterBtnsListeners() {
   //render muscles on page load
-  renderMusclesOnLoad();
+  handleMusclesFilter();
   //muscules
-  refs.musclesFilter.addEventListener('click', handleMusclesFilter);
+  refs.musclesFilter.addEventListener(ActionNames.CLICK, handleMusclesFilter);
 
   //body parts
-  refs.bodyPartsFilter.addEventListener('click', handleBodyPartsFilter);
+  refs.bodyPartsFilter.addEventListener(
+    ActionNames.CLICK,
+    handleBodyPartsFilter
+  );
 
   //equipment
-  refs.equipmentFilter.addEventListener('click', handleEquipmentFilter);
+  refs.equipmentFilter.addEventListener(
+    ActionNames.CLICK,
+    handleEquipmentFilter
+  );
+
+  //card click
+  refs.filterList.addEventListener(ActionNames.CLICK, handleCardClick);
+
+  refs.inputField.addEventListener('input', handleInput);
 }
+
+filterBtnsListeners();
