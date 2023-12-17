@@ -29,7 +29,8 @@ function handleFilter(type) {
   if (refs.musclesFilter && refs.bodyPartsFilter && refs.equipmentFilter) {
     toggleActiveBtn(type);
     disableBtns(type);
-
+    apiManager.resetPage();
+    refs.paginationContainer.innerHTML = '';
     apiManager.getFiltersOfExercises(type).then(data => {
       filterRenderer.render(data.results);
     });
@@ -103,7 +104,7 @@ export function handleCardClick(e) {
   const card = e.target.closest('.filter__list__muscles');
   if (!card) return;
   proxy.filterQuery = card.dataset.name;
-
+  apiManager.resetPage();
   apiManager
     .getExercisesByFilters('', proxy.filterQuery, proxy.activeFilter)
     .then(({ page, totalPages, results }) => {
@@ -111,7 +112,7 @@ export function handleCardClick(e) {
       proxy.totalPages = totalPages;
       apiManager.updatePage();
       exercise.render(results);
-      pagination(refs.filterList);
+      pagination(refs.paginationContainer);
     });
 
   toggleInputAndSpecialSign(Utils.firstToUpper(proxy.filterQuery));
@@ -149,6 +150,6 @@ export function renderCurrentPage() {
       } else {
         refs.noData.classList.add('hidden');
       }
-      pagination(refs.filterList);
+      pagination(refs.paginationContainer);
     });
 }
