@@ -53,7 +53,7 @@ function renderExcessesModal(data) {
         class="modal_image"
         src="${gifUrl}"
         alt="${name}"
-        onerror="this.onerror = null; this.src ='img/modal/no_image.png'"
+        onerror="this.onerror = null; this.src =''"
       />
     </div>
     <div>
