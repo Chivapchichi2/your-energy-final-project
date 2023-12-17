@@ -267,4 +267,6 @@ button {
 .bin {
   border: none;
   background: transparent;
+  width: 16px;
+  height: 16px;
 }

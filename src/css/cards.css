@@ -7,6 +7,9 @@
   gap: 8px;
   justify-content: center;
 }
+.error-message-text {
+  text-align: center;
+}
 
 .pagination button {
   width: 32px;
@@ -45,6 +48,9 @@
   justify-content: center;
   color: var(--main-color);
 }
+.body_parts__info-item {
+  display: flex;
+}
 
 @media screen and (min-width: 768px) {
   .body_parts-list {
@@ -52,6 +58,14 @@
     flex-wrap: wrap;
     justify-content: center;
     color: var(--main-color);
+  }
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .body_parts__item {
+    flex-basis: calc((100% - 16px) / 2);
   }
 }
 
@@ -68,11 +82,6 @@
   padding: 16px;
   border-radius: 15px;
   background-color: var(--color-white);
-}
-@media screen and (min-width: 768px) {
-  .body_parts__item {
-    flex-basis: calc((100% - 16px) / 2);
-  }
 }
 
 .body_parts__item-type {
@@ -153,9 +162,6 @@
   .content {
     min-width: 850px;
     min-height: 340px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   .error-message-text {
     font-size: 18px;
