@@ -7,3 +7,4 @@ import './js/footer.js';
 import './js/tamplates/modal.js';
 import './js/scroll.js';
 import './js/favorites/renderFavorites.js';
+// import './js/service/loader.js';

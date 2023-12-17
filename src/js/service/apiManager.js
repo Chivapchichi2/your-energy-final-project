@@ -1,6 +1,7 @@
 import { APIClient } from './apiClient';
 import { Messages } from './messages';
 import proxy from '../proxy/proxy.js';
+import { Loader } from './loader.js';
 
 class APIManager {
   constructor() {
@@ -14,6 +15,7 @@ class APIManager {
     //pull - input query
     //bodypart - data-filterRequset of button
 
+    Loader.show();
     try {
       const { data } = await this.apiClient.fetchFiltersOfExercises(
         filter,
@@ -23,6 +25,8 @@ class APIManager {
       return data;
     } catch (error) {
       Messages.error(error.message);
+    } finally {
+      Loader.hide();
     }
   }
 
@@ -41,6 +45,7 @@ class APIManager {
     //pull - input query
     //bodypart - data-filterDetailedRequset of button
     //value of btn.filter__query  in filter.html
+    Loader.show();
     try {
       const { data } = await this.apiClient.fetchExercisesByFilters(
         keyword,
@@ -51,6 +56,8 @@ class APIManager {
       return data;
     } catch (error) {
       Messages.error(error.message);
+    } finally {
+      Loader.hide();
     }
   }
 
