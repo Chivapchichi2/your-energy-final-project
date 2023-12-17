@@ -1,28 +1,10 @@
-import { APIClient } from './apiClient';
+function pagination(object, container) {
+  let currentPage = object.currentPage;
+  let totalPages = object.totalPages;
 
-class Pagination {
-  constructor() {}
-}
+  const content = container;
 
-async function pagination(filter) {
-  function render(data) {
-    return `${result.data.page} ${result.data.results.map(({ name }) => name)}`;
-  }
-
-  const content = document.querySelector('.content');
-  const container = document.querySelector('.test');
-  let currentPage = 1;
-
-  const apiClient = new APIClient();
-  async function api(filter, page = 1) {
-    return await apiClient.fetchFiltersOfExercises(filter, page);
-  }
-  let result = await api(filter, currentPage);
-  container.innerHTML = render(result);
-  console.log('result', result.data);
-  const { totalPages } = result.data;
-
-  function pagination() {
+  function paginationStart() {
     createPageButtons();
     showPage(currentPage);
   }
@@ -50,14 +32,11 @@ async function pagination(filter) {
     for (let i = 0; i < totalPages; i++) {
       const pageButton = document.createElement('button');
       pageButton.textContent = i + 1;
-      pageButton.addEventListener('click', async () => {
+      pageButton.addEventListener('click', () => {
         currentPage = i + 1;
 
-        if (currentPage !== parseInt(result.data.page)) {
-          result = await api(filter, currentPage);
+        if (currentPage !== object.currentPage) {
           updateActiveButtonStates();
-
-          container.innerHTML = render(result);
         }
       });
 
@@ -67,7 +46,7 @@ async function pagination(filter) {
   }
 
   if (totalPages > 1) {
-    pagination();
+    paginationStart();
   }
 }
 
