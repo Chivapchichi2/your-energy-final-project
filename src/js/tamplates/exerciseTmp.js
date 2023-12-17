@@ -1,12 +1,13 @@
 /**
  * Exercise class
  */
+import { Utils } from '../utils/utils.js';
 
 export class Exercise {
   constructor(container, favorite = false) {
     this.container = container;
     this.favorite = favorite;
-    this.path = '../../img/sprite.svg';
+    this.path = Utils.getPath();
   }
 
   /**

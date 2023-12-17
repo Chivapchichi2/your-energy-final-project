@@ -20,4 +20,14 @@ export class Utils {
   static firstToUpper(string) {
     return string[0].toUpperCase() + string.substring(1);
   }
+
+  /**
+   * Get path from svg
+   * @returns {string}
+   */
+  static getPath() {
+    let svg = document.querySelector('.header-socials-icon');
+    svg = svg ? svg : document.querySelector('.icon-message');
+    return svg.children[0].href.baseVal.split('#')[0];
+  }
 }
