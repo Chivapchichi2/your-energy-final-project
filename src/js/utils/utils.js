@@ -28,7 +28,6 @@ export class Utils {
   static getPath() {
     let svg = document.querySelector('.header-socials-icon');
     svg = svg ? svg : document.querySelector('.icon-message');
-    console.log(svg.children[0].href);
     return svg.children[0].href.animVal.split('#')[0];
   }
 }

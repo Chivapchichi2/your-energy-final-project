@@ -1,5 +1,6 @@
 import apiManager from '../service/apiManager';
 import { closeModal } from './modal';
+import { Utils } from '../utils/utils.js';
 const backgroundElement = document.querySelector('.modal-background');
 
 function changeRatingNumberTemplate(checked, rating) {
@@ -62,7 +63,7 @@ export function renderSetRatingModal(id) {
         height="24"
         aria-label="heart icon"
       >
-        <use href="./img/sprite.svg#icon-close"></use>
+        <use href="${Utils.getPath()}#icon-close"></use>
       </svg>
     </button>
     <form class="modal_set_rating_form" data-id="${id}">
