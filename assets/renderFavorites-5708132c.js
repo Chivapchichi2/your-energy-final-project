@@ -153,7 +153,7 @@ It can be › `+b);return}a||window.innerWidth<=u?i.position=="bottomLeft"||i.po
         class="modal_image"
         src="${n}"
         alt="${s}"
-        onerror="this.onerror = null; this.src ='img/modal/no_image.png'"
+        onerror="this.onerror = null; this.src =''"
       />
     </div>
     <div>
