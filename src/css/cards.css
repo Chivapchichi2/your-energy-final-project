@@ -68,12 +68,10 @@
   padding: 16px;
   border-radius: 15px;
   background-color: var(--color-white);
-  margin-bottom: 20px;
 }
 @media screen and (min-width: 768px) {
   .body_parts__item {
-    flex: 0 0 calc(50% - 16px);
-    margin-bottom: 32px;
+    flex-basis: calc((100% - 16px) / 2);
   }
 }
 
@@ -82,14 +80,13 @@
   border: 1px solid var(--main-color);
   border-radius: 15px;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 12px;
+  font-weight: 500;
   line-height: 1; /* 100% */
 }
 
 .headline_flexbox {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   margin-bottom: 25px;
 }
 
@@ -104,8 +101,12 @@
   align-items: center;
   gap: 2px;
 }
-
+.body_parts__item-grade-svg-wrap {
+  width: 18px;
+  height: 18px;
+}
 .body_parts__item-grade {
+  font-size: 12px;
   line-height: 1.5; /* 150% */
 }
 
@@ -113,6 +114,8 @@
   fill: var(--icon-color-yellow);
   display: inline-block;
   vertical-align: middle;
+  width: 100%;
+  height: 100%;
 }
 
 .body_parts__excercise-flexbox {
@@ -124,6 +127,7 @@
 
 .body_parts__excercise-name {
   font-size: 20px;
+  font-weight: 400;
   line-height: 1; /* 100% */
 }
 @media screen and (min-width: 768px) {
@@ -146,6 +150,7 @@
 .body_parts-start-flexbox {
   display: flex;
   align-items: center;
+  margin-left: auto;
 }
 
 .next-btn {
