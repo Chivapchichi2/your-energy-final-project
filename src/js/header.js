@@ -1,17 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const currentUrl = window.location.href;
+  const currentUrl = new URL(window.location.href);
 
-  const menuLinks = document.querySelectorAll('.header-menu-link');
+  const homePage = document.querySelector('#home');
+  const favouritesPage = document.querySelector('#favorites');
 
+  if (currentUrl.href === homePage.href || currentUrl.pathname === '/') {
+    favouritesPage.classList.remove('current-page');
+    homePage.classList.add('current-page');
+  }
 
-  menuLinks.forEach(link => {
-
-    link.classList.remove('current-page');
-
-
-    if (link.href === currentUrl) {
-
-      link.classList.add('current-page');
-    }
-  });
+  if (currentUrl.href === favouritesPage.href) {
+    homePage.classList.remove('current-page');
+    favouritesPage.classList.add('current-page');
+  }
 });

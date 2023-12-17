@@ -52,6 +52,7 @@
     padding-left: 12px;
     padding-right: 12px;
     color: var(--page-background-color);
+    transition: var(--transition);
   }
   .header-menu-link:hover,
   .header-menu-link:focus {
@@ -72,17 +73,18 @@
   }
   .header-socials-item-link {
     border-radius: 10px;
-    border: 1px solid rgba(36, 36, 36, 0.1);
+    border: 1px solid var(--secondary-color);
     padding: 8px;
     display: flex;
     align-items: center;
     fill: var(--main-color);
     opacity: 0.8;
+    transition: var(--transition);
   }
 
   .header-socials-item-link:hover,
   .header-socials-item-link:focus {
-    background: rgba(36, 36, 36, 0.8);
+    background-color: var(--secondary-color);
     fill: var(--page-background-color);
   }
 }

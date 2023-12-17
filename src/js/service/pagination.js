@@ -1,6 +1,7 @@
 import proxy from '../proxy/proxy.js';
 import apiManager from './apiManager.js';
 import { renderCurrentPage } from '../filter/handlers.js';
+import { refs } from '../filter/refs.js';
 
 function pagination(container) {
   container.innerHTML = '';
@@ -38,6 +39,7 @@ function pagination(container) {
         } else {
           proxy.currentPage = pageNumber;
         }
+        refs.filterList.innerHTML = '';
         apiManager.updatePage();
         updateActiveButtonStates();
         renderCurrentPage();

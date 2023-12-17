@@ -7,14 +7,20 @@
   font-size: 16px;
   border: 1px solid var(--secondary-color);
   border-radius: 16px;
-  padding: 16px 8px;
+  padding: 5px 8px;
   transform: translateY(300px);
-  transition: all .5s ease
+  transition: all 0.5s ease;
+}
+.scrollToTopBtn:hover,
+.scrollToTopBtn:focus {
+  border-color: var(--icon-color-yellow);
+  background-color: var(--main-color);
+  color: var(--color-white);
 }
 
 .showBtn {
   opacity: 0.8;
-  transform: translateY(0)
+  transform: translateY(0);
 }
 
 @media screen and (min-width: 1440px) {
