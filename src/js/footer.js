@@ -13,7 +13,7 @@ class Footer {
     let emailInput = document.querySelector('.footer-form-input');
     const isEmailValid = Utils.validateEmail(emailInput.value.trim());
     if (!isEmailValid) {
-      Messages.error('Email is not valid');
+      Messages.error('Email is not valid. Please check if your input have "@" and "." symbols');
       return;
     }
     apiManager.subscribe(emailInput.value.trim());
