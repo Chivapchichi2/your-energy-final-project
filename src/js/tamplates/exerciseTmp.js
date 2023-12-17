@@ -25,10 +25,12 @@ export class Exercise {
                 <use href="${this.path}#icon-bin"></use>
               </svg>
             </button>`
-          : `<span class="body_parts__item-grade">${rating}</span>
-              <svg class="body_parts__item-grade-svg" width="18px" height="18px">
+          : `
+              <span class="body_parts__item-grade">${rating}</span>
+              <div class=".body_parts__item-grade-svg-wrap">
+              <svg class="body_parts__item-grade-svg" width="18" height="18">
                 <use href="${this.path}#icon-star-icon"></use>
-              </svg>`;
+              </svg></div>`;
         return `
       <li class="body_parts__item">
         <div class="headline_flexbox">
@@ -40,17 +42,19 @@ export class Exercise {
           </div>
           <div class="body_parts-start-flexbox">
             <button class="next-btn" data-id="${_id}">Start
-              <svg class="next-btn-svg" width="16px" height="16px">
+              <svg class="next-btn-svg" width="16" height="16">
                 <use href="${this.path}#icon-arrow-right"></use>
               </svg>
             </button>
           </div>
         </div>
         <div class='body_parts__excercise-flexbox'>
-          <svg class='body_parts__excercise-svg' width='24px' height='24px'>
-            <use href='${gifUrl}'></use>
-          </svg>
-          <h3 class='body_parts__excercise-name'>${name}</h3>
+          <div class="body_parts__exercise-icon-container">
+            <svg class='body_parts__excercise-svg' width='24' height='24'>
+              <use href='${this.path}#icon-running-stick-figure'></use>
+            </svg>
+          </div>
+          <h3 class='body_parts__excercise-name'>${trimName(name)}</h3>
         </div>
         <ul class='body_parts__info'>
           <li class='body_parts__info-item'>
@@ -72,4 +76,11 @@ export class Exercise {
 
     this.container.innerHTML = markup;
   }
+}
+
+function trimName(str) {
+  if (str.length > 20) {
+    return str.substring(0, 25 - 3) + '...';
+  }
+  return str;
 }
