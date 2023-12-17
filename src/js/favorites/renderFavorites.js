@@ -93,4 +93,7 @@ function renderFavorites() {
     exercise.render(localData);
   }
 }
-renderFavorites();
+
+if (favoritesList) {
+  renderFavorites();
+}
