@@ -4,6 +4,7 @@ import {
   handleEquipmentFilter,
   handleCardClick,
   handleInput,
+  handleClearClick
 } from './handlers';
 import { refs } from './refs';
 import { ActionNames } from '../misc/names.js';
@@ -30,6 +31,7 @@ export function filterBtnsListeners() {
   refs.filterList.addEventListener(ActionNames.CLICK, handleCardClick);
 
   refs.inputField.addEventListener('input', handleInput);
+  refs.searchBtn.addEventListener('click', handleClearClick);
 }
 
 if (refs.musclesFilter && refs.bodyPartsFilter && refs.equipmentFilter) {

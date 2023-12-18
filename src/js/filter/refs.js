@@ -9,4 +9,7 @@ export const refs = {
   specialText: document.querySelector('.filter__query'),
   noData: document.querySelector('.error-block'),
   paginationContainer: document.querySelector('.pagination__container'),
+  searchIcon: document.querySelector('.js-search'),
+  closeIcon: document.querySelector('.js-close'),
+  searchBtn: document.querySelector('.filter__searchBox__btn'),
 };

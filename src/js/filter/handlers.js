@@ -138,6 +138,11 @@ export const handleInput = debounce(e => {
   proxy.query = e.target.value;
   refs.filterList.innerHTML = '';
   renderCurrentPage();
+  if(e.target.value !== '') {
+    toggleIcons(true);
+  }else {
+    toggleIcons(false);
+  }
 }, proxy.debounceDelay);
 
 export function renderCurrentPage() {
@@ -155,4 +160,22 @@ export function renderCurrentPage() {
       }
       pagination(refs.paginationContainer);
     });
+}
+
+function toggleIcons(isSearch) {
+  if (isSearch) {
+    refs.searchIcon.classList.add('hidden');
+    refs.closeIcon.classList.remove('hidden');
+  } else {
+    refs.searchIcon.classList.remove('hidden');
+    refs.closeIcon.classList.add('hidden');
+  }
+}
+
+ export function handleClearClick() {
+  if(refs.inputField.value === '') return;
+  refs.inputField.value = '';
+  proxy.query = '';
+  renderCurrentPage();
+  toggleIcons(false);
 }
