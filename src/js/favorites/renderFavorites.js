@@ -17,9 +17,11 @@ function handleBinButtonClick(clickedElement) {
   const localData = JSON.parse(localStorage.getItem('favorites'));
   const newData = localData.filter(item => item._id !== dataId);
   localStorage.setItem('favorites', JSON.stringify(newData));
+  favoritesList.classList.remove('hide-block');
   exercise.render(newData);
-  if (!newData.length) {
-    emptyStorageMsg.style.display = 'block';
+  if (!localData || !newData.length) {
+    favoritesList.classList.add('hide-block');
+    emptyStorageMsg.classList.remove('hide-block');
   }
 }
 
@@ -41,11 +43,11 @@ function renderFavorites() {
 
   const localData = JSON.parse(localStorage.getItem('favorites'));
 
-  if (!localData) {
-    content.style.justifyContent = 'center';
-    favoritesList.classList.add('favorites-empty-list');
-    emptyStorageMsg.style.display = 'block';
+  if (!localData || !localData?.length) {
+    favoritesList.classList.add('hide-block');
+    emptyStorageMsg.classList.remove('hide-block');
   } else {
+    favoritesList.classList.remove('hide-block');
     exercise.render(localData);
   }
 }
