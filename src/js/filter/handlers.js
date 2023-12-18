@@ -83,6 +83,30 @@ function disableBtns(str) {
   }
 }
 
+function changeIconInFilterInput(value) {
+  if (value) {
+    refs.filterSearchBtn.removeAttribute('disabled');
+    refs.filterSearchBtnIconUrl.setAttribute(
+      'href',
+      `${Utils.getPath()}#icon-close`
+    );
+  } else {
+    refs.filterSearchBtn.setAttribute('disabled', true);
+    refs.filterSearchBtnIconUrl.setAttribute(
+      'href',
+      `${Utils.getPath()}#icon-search`
+    );
+  }
+}
+
+export function handlerClickCrossInputBtn(event) {
+  proxy.query = '';
+  refs.filterList.innerHTML = '';
+  refs.inputField.value = '';
+  changeIconInFilterInput('');
+  renderCurrentPage();
+}
+
 export function handleMusclesFilter() {
   handleFilter('Muscles');
   proxy.activeFilter = 'muscles';
@@ -135,8 +159,10 @@ function toggleInputAndSpecialSign(text = '') {
 }
 
 export const handleInput = debounce(e => {
+  console.log(8, e.target.value);
   proxy.query = e.target.value;
   refs.filterList.innerHTML = '';
+  changeIconInFilterInput(e.target.value);
   renderCurrentPage();
 }, proxy.debounceDelay);
 

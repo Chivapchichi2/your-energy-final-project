@@ -2,6 +2,7 @@ import {
   handleMusclesFilter,
   handleBodyPartsFilter,
   handleEquipmentFilter,
+  handlerClickCrossInputBtn,
   handleCardClick,
   handleInput,
 } from './handlers';
@@ -30,6 +31,7 @@ export function filterBtnsListeners() {
   refs.filterList.addEventListener(ActionNames.CLICK, handleCardClick);
 
   refs.inputField.addEventListener('input', handleInput);
+  refs.filterSearchBtn.addEventListener('click', handlerClickCrossInputBtn);
 }
 
 if (refs.musclesFilter && refs.bodyPartsFilter && refs.equipmentFilter) {
