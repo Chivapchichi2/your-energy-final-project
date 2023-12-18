@@ -1,5 +1,6 @@
 .hero {
-  padding-bottom: 40px;
+  /*padding-bottom: 40px;*/
+  padding-top:80px ;
 }
 .tags-img-wrapper {
   display: none;
@@ -45,9 +46,10 @@
 .tag-text {
   font-size: 14px;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .hero {
-    padding-bottom: 64px;
+    /*padding-bottom: 64px;*/
+    padding-top: 100px;
   }
   .container {
     padding-left: 32px;
@@ -84,7 +86,10 @@
     line-height: 1.5;
   }
 }
-@media screen and (min-width: 1439px) {
+@media screen and (min-width: 1440px) {
+  .hero {
+    padding-top:96px ;
+  }
   .hero-title-tags-wrapper {
     display: flex;
     justify-content: space-between;
@@ -92,7 +97,6 @@
   .tags-img-wrapper {
     display: flex;
     flex-direction: column;
-    width: 198px;
   }
   .tag-list-desktop {
     width: 205px;

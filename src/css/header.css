@@ -2,7 +2,6 @@
   .header-section {
     position: relative;
     padding-top: 20px;
-    padding-bottom: 80px;
   }
 }
 
@@ -19,8 +18,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 24px;
-    padding-bottom: 100px;
+    padding-top: 24px;
   }
   .header-navigation {
     display: flex;
@@ -91,10 +89,6 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .header-section {
-    padding-bottom: 96px;
-  }
-
   .header-socials-list {
     margin-left: 400px;
   }
