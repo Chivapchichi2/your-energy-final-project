@@ -136,8 +136,21 @@ function addOrDeleteExcessesToLS(data) {
   } else {
     const dataToLs = lsData.filter(item => item._id !== data._id);
     localStorage.setItem(FAVORITES_LS_KEY, JSON.stringify(dataToLs));
-    const favoritesList = document.querySelector('.favorites-list');
-    favoritesList && exercise.render(dataToLs);
+  }
+  reRenderFavorites();
+}
+
+function reRenderFavorites() {
+  const favoritesList = document.querySelector('.favorites-list');
+  const emptyStorageMsg = document.querySelector('.favorites-error-message');
+  if (!favoritesList) return;
+  const localData = JSON.parse(localStorage.getItem(FAVORITES_LS_KEY));
+  if (!localData || !localData?.length) {
+    favoritesList.classList.add('hide-block');
+    emptyStorageMsg.classList.remove('hide-block');
+  } else {
+    favoritesList.classList.remove('hide-block');
+    exercise.render(localData);
   }
 }
 
