@@ -8,13 +8,10 @@
   align-items: center;
   margin-bottom: 20px;
   gap: 20px;
+  overflow-y: auto;
+  max-height: 1260px;
 }
-.favorites-empty-list {
-  justify-content: center;
-}
-.hide-error {
-  display: none;
-}
+
 .favorites-recommendation {
   width: 100%;
   flex-direction: column;
@@ -42,14 +39,17 @@
   .favorites-list {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 16px;
+    max-height: 845px;
+    gap: 10px;
     margin-bottom: 16px;
   }
   .quote-card {
     width: auto;
   }
   .favorites-error-message {
-    width: 554px;
+    display: flex;
+    margin: auto;
+    max-width: 554px;
     text-align: center;
   }
   .grid-container {
@@ -87,6 +87,7 @@
 @media screen and (min-width: 1440px) {
   .favorites-list {
     overflow-y: auto;
+    max-height: 470px;
     width: 100%;
     align-items: flex-start;
   }
@@ -120,4 +121,8 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+}
+
+.hide-block {
+  display: none;
 }
