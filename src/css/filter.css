@@ -169,11 +169,12 @@ button {
 }
 
 @media screen and (min-width: 768px) {
+  .exercises {
+    padding-top:68pxpx ;
+  }
+
   .filter__searchBox {
     width: 273px;
-  }
-  .filter__title__container {
-    margin-bottom: 32px;
   }
 
   .filter__searchBox__btnContainer__wrapper {
@@ -226,6 +227,10 @@ button {
 }
 
 @media screen and (min-width: 1440px) {
+  .exercises {
+    padding-top:64px ;
+  }
+
   .filter__container {
     width: 100%;
   }
@@ -240,7 +245,6 @@ button {
     flex-direction: row;
     justify-content: right;
     align-items: center;
-    margin-bottom: 32px;
   }
 
   .filter__searchBox {
@@ -256,6 +260,12 @@ button {
   .filter__list__muscles-img {
     width: 290px;
     height: 242px;
+  }
+
+  .exercise__container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
   }
 }
 
@@ -274,4 +284,8 @@ button {
   background: transparent;
   width: 16px;
   height: 16px;
+}
+
+.exercises {
+  padding-top:40px ;
 }
