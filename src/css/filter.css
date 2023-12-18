@@ -289,3 +289,7 @@ button {
 .exercises {
   padding-top:40px ;
 }
+
+.filter__searchBox__icon__close {
+  stroke: var(--main-color);
+}
